@@ -1,5 +1,7 @@
 "use client";
 
+import { useInView } from "../hooks/useInView";
+
 import { SkillsTabs } from "./skill-tabs";
 import { SkillsContent } from "./skill-content";
 import { useState } from "react";
@@ -8,12 +10,13 @@ type SkillTab = "frontend" | "backend" | "tools";
 
 export default function Skills() {
   const [activeTab, setActiveTab] = useState<SkillTab>("frontend");
+  const ref = useInView()
   return (
     <section
       id="skills"
       className="relative z-10 w-full flex justify-center h-fit"
     >
-      <div className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0">
+      <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
         <header className="flex flex-col gap-6">
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Skills e tecnologias

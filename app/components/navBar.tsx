@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <header className="w-full fixed top-0 z-50">
       <div className="w-full bg-background/50 backdrop-blur-lg flex justify-center py-7 md:py-8">
-        <nav className="flex w-full  justify-between px-5 max-w-450">
+        <nav className="flex w-full justify-between px-6 xl:px-12">
           {/* LOGO */}
           <a
             href="#"

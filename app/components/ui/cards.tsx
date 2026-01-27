@@ -63,7 +63,7 @@ export function SkillItem({ name, icon: Icon }: SkillItemProps) {
 
 export function ContactCard() {
   return (
-    <div className="w-full md:max-w-222 flex flex-col justify-center items-center bg-card/50 backdrop-blur-xs border border-border/50 rounded-xl gap-6 px-6 md:px-12 py-12">
+    <div className="w-full md:max-w-200 flex flex-col justify-center items-center bg-card/50 backdrop-blur-xs border border-border/50 rounded-xl gap-6 px-6 md:px-12 py-12">
       <section className="text-start flex flex-col md:flex-row w-full max-w-71 md:max-w-full justify-between gap-6 md:gap-2 ">
         <div className="w-full flex flex-row justify-start items-center gap-4">
           <div className="p-3 rounded-xl text-primary bg-primary/10">

@@ -1,13 +1,18 @@
+"use client";
+
+import { useInView } from "../hooks/useInView";
 import { PROJECTS } from "@/app/data/projects";
 import { ProjectCard } from "./ui/cards";
 
 export default function Projects() {
+  const ref = useInView();
+
   return (
     <section
       id="projects"
       className="relative z-10 w-full flex justify-center h-fit"
     >
-      <div className="container flex flex-col justify-center items-start gap-8 pt-30 pb-30 md:pb-40 mx-2 md:mx-0">
+      <div ref={ref} className="container flex flex-col justify-center items-start gap-8 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
         <header className="flex flex-col gap-6">
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Meus projetos
