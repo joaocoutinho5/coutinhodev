@@ -93,7 +93,7 @@ export function MobileMenu() {
               scrollToSection(link.id);
               closeMenu();
             }}
-            className="font-mono text-foreground"
+            className="font-mono text-foreground/90"
           >
             {link.label}
           </Link>

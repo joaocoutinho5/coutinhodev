@@ -21,10 +21,10 @@ export default function Skills() {
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Skills e tecnologias
           </p>
-          <h1 className="text-3xl md:text-5xl text-foreground font-bold">
+          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
             Minhas habilidades
           </h1>
-          <p className="text-md md:text-lg font-light max-w-150 text-foreground/70 flex flex-col gap-4 leading-relaxed">
+          <p className="text-md md:text-lg font-light max-w-150 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             Tecnologias e ferramentas que utilizo para transformar ideias em
             produtos digitais de alta qualidade.
           </p>

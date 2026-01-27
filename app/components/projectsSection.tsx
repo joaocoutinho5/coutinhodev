@@ -17,10 +17,10 @@ export default function Projects() {
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Meus projetos
           </p>
-          <h1 className="text-3xl md:text-5xl text-foreground font-bold">
+          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
             Projetos em destaque
           </h1>
-          <p className="text-md md:text-lg font-light max-w-150 text-foreground/70 flex flex-col gap-4 leading-relaxed">
+          <p className="text-md md:text-lg font-light max-w-150 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             Uma seleção dos meus projetos mais recentes e relevantes que
             demonstram minhas habilidades técnicas e criativas.
           </p>

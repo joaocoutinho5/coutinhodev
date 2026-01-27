@@ -16,7 +16,7 @@ export default function NavLinks({
     >
       <span
         className={`relative transition-colors
-    ${active ? "text-foreground" : "text-foreground/50 hover:text-foreground"}
+    ${active ? "text-foreground/90" : "text-foreground/50 hover:text-foreground/90"}
   `}
       >
         {label}

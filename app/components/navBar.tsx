@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <header className="w-full fixed top-0 z-50">
       <div className="w-full bg-background/50 backdrop-blur-lg flex justify-center py-7 md:py-8">
-        <nav className="flex w-full justify-between px-6 xl:px-12">
+        <nav className="text-foreground/90 flex w-full justify-between px-5 xl:px-12 transition-all">
           {/* LOGO */}
           <a
             href="#"
@@ -49,7 +49,7 @@ export default function Navbar() {
           </a>
 
           {/* LINKS */}
-          <div className="hidden font-mono md:flex text-foreground items-center gap-9">
+          <div className="hidden font-mono md:flex text-foreground/90 items-center gap-9">
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.id;
 

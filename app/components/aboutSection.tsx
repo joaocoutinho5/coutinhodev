@@ -16,12 +16,12 @@ export default function About() {
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Sobre mim
           </p>
-          <h1 className="text-3xl md:text-5xl text-foreground font-bold">
+          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
             Quem sou eu
           </h1>
         </header>
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
-          <section className="text-md md:text-lg font-light w-full md:max-w-120 text-foreground/70 flex flex-col gap-4 leading-relaxed">
+          <section className="text-md md:text-lg font-light w-full md:max-w-120 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             <p>
               Sou um desenvolvedor apaixonado por tecnologia que recentemente
               encontrou na programação um espaço para crescer e se desafiar

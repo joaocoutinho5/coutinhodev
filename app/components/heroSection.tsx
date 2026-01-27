@@ -23,10 +23,10 @@ export default function Hero() {
               <span className="text-primary">.</span>
             </h1>
 
-          <h2 ref={descRef} className="text-2xl md:text-4xl text-foreground/70 font-semibold fade-down delay-2">
+          <h2 ref={descRef} className="text-2xl md:text-4xl text-foreground/65 font-semibold fade-down delay-2">
             Full-Stack Developer
           </h2>
-          <p ref={subDescRef} className="text-md md:text-lg font-light text-foreground/70 max-w-150 fade-down delay-3">
+          <p ref={subDescRef} className="text-md md:text-lg font-light text-foreground/65 max-w-150 fade-down delay-3">
             Desenvolvedor web em constante aprendizado, criando soluções
             eficientes com tecnologias modernas e boas práticas.
           </p>

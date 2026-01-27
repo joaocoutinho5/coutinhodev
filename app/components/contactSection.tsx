@@ -16,10 +16,10 @@ export default function Contact() {
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Entre em contato
           </p>
-          <h1 className="text-3xl md:text-5xl text-foreground font-bold">
+          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
             Vamos conversar
           </h1>
-          <p className="text-md md:text-lg font-light max-w-180 text-foreground/70 flex flex-col gap-4 leading-relaxed">
+          <p className="text-md md:text-lg font-light max-w-180 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             Estou sempre aberto a novas oportunidades e projetos interessantes.
             Se você tem uma ideia em mente, vamos conversar!
           </p>

@@ -21,7 +21,7 @@ export function SkillsTabs({ activeTab, onChange }: SkillsTabsProps) {
           <button
             key={tab}
             onClick={() => onChange(tab as SkillTab)}
-            className="relative z-10 px-3 md:px-4 py-1.5 md:py-2 text-[14px] font-medium text-foreground/60 hover:text-foreground transition-colors"
+            className="relative z-10 px-3 md:px-4 py-1.5 md:py-2 text-[14px] font-medium text-foreground/65 hover:text-foreground/90 transition-colors"
           >
             {isActive && (
               <motion.span
@@ -31,7 +31,7 @@ export function SkillsTabs({ activeTab, onChange }: SkillsTabsProps) {
               />
             )}
 
-            <span className={isActive ? "text-foreground" : ""}>
+            <span className={isActive ? "text-foreground/90" : ""}>
               {tab === "frontend"
                 ? "Front-end"
                 : tab === "backend"

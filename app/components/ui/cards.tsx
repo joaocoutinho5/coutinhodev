@@ -20,11 +20,11 @@ export function ProfileCard() {
         <div className="absolute -bottom-1 right-0 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
       </div>
       <div className="flex flex-col justify-center items-center gap-1">
-        <h3 className="text-xl font-semibold">João Pedro Coutinho</h3>
-        <p className="text-md text-foreground/80">Desenvolvedor Full-Stack</p>
+        <h3 className="text-xl text-foreground/90 font-semibold">João Pedro Coutinho</h3>
+        <p className="text-md text-foreground/65">Desenvolvedor Full-Stack</p>
       </div>
       <span className="w-full h-px bg-border my-3" />
-      <div className="flex flex-row text-foreground/80 gap-2">
+      <div className="flex flex-row text-foreground/65 gap-2">
         <BtnGithub />
         <BtnLinkedin />
         <BtnInstagram />
@@ -52,7 +52,7 @@ export function SkillItem({ name, icon: Icon }: SkillItemProps) {
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="flex flex-col justify-center items-center w-full gap-2 py-6 rounded-xl
                 bg-card/50 backdrop-blur-xs border border-border/50
-                text-foreground/80 hover:text-foreground
+                text-foreground/65 hover:text-foreground/90
                 hover:border-primary/40"
     >
       <Icon className="text-lg" />
@@ -71,7 +71,7 @@ export function ContactCard() {
           </div>
           <div className="text-sm md:text-md">
             <h1 className="text-foreground/50 font-light">Email</h1>
-            <p className="text-foreground">coutinhodev@outlook.com</p>
+            <p className="text-foreground/90">coutinhodev@outlook.com</p>
           </div>
         </div>
         <div className="w-full flex flex-row justify-start items-center gap-4">
@@ -80,7 +80,7 @@ export function ContactCard() {
           </div>
           <div className="text-sm md:text-md">
             <h1 className="text-foreground/50 font-light">Localização</h1>
-            <p className="text-foreground">Ribeirão Preto, São Paulo, Brasil</p>
+            <p className="text-foreground/90">Ribeirão Preto, São Paulo, Brasil</p>
           </div>
         </div>
       </section>
@@ -129,7 +129,7 @@ export function ProjectCard({
       {/* Content */}
       <div className="p-5 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <h3 className="text-xl font-semibold text-foreground">{title}</h3>
+          <h3 className="text-xl font-semibold text-foreground/90">{title}</h3>
           <p className="text-sm font-light text-foreground/50 leading-relaxed">{desc}</p>
         </div>
 
