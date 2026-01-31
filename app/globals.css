@@ -51,8 +51,7 @@ body {
 .container {
   max-width: 1050px;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-inline: 16px;
 }
 
 @keyframes fadeDown {

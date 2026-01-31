@@ -14,11 +14,11 @@ export default function Footer() {
         {/* Links */}
         <nav className="flex items-center gap-6 text-sm">
           <Link
-            href=""
+            href="https://github.com/joaocoutinho5/coutinhodev"
             className="group flex flex-row items-center justify-center gap-0.5 hover:text-primary transition"
             target="_blank"
           >
-            Portfólio
+            Codigo Portfólio
             <ArrowUpRight
               size={18}
               className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"

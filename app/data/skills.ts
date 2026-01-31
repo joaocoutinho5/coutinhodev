@@ -9,7 +9,6 @@ import {
   SiBootstrap,
   SiNodedotjs,
   SiPostgresql,
-  SiPrisma,
   SiIcloud,
   SiGit,
   SiGithub,
@@ -40,7 +39,6 @@ export const SKILLS: Record<SkillCategory, SkillItemProps[]> = {
   backend: [
     { name: "Node.js", icon: SiNodedotjs },
     { name: "PostgreSQL", icon: SiPostgresql },
-    { name: "Prisma", icon: SiPrisma },
     { name: "REST APIs", icon: SiIcloud },
   ],
   tools: [

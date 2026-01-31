@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfólio Pessoal
 
-## Getting Started
+[![Acessar Projeto](https://img.shields.io/badge/Acessar%20Projeto-Online-success)]()
 
-First, run the development server:
+Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e evolução no desenvolvimento web, aplicando conceitos modernos de front-end.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js**
+- **React**
+- **Tailwind CSS**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Sobre o Portfólio
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto representa meu **portfólio pessoal**, criado com o objetivo de centralizar e apresentar meus principais projetos, estudos e experiências no desenvolvimento web. Ele foi desenvolvido utilizando **Next.js**, **React** e **Tailwind CSS**, priorizando boas práticas, organização de código e uma interface moderna.
 
-## Learn More
+O portfólio foi pensado para ser simples, objetivo e visualmente agradável, permitindo que recrutadores e visitantes compreendam rapidamente meu perfil, minhas habilidades técnicas e os projetos que venho desenvolvendo ao longo da minha evolução na área de tecnologia.
 
-To learn more about Next.js, take a look at the following resources:
+Além de servir como vitrine profissional, este projeto também funciona como um espaço de **aprendizado contínuo**, onde aplico e aprimoro conceitos fundamentais do front-end moderno.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Seções do Portfólio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Sobre mim**
+  - Apresentação pessoal e resumo do meu perfil profissional
 
-## Deploy on Vercel
+- **Skills e Tecnologias**
+  - Tecnologias, ferramentas e conceitos que utilizo no desenvolvimento
+  
+- **Projetos**
+  - Listagem dos principais projetos desenvolvidos
+  - Descrição breve de cada projeto, tecnologias utilizadas e links de acesso
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Contato**
+  - Formas de entrar em contato e acessar minhas redes profissionais
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Objetivos do Projeto
+
+Este portfólio tem como principal objetivo o **aprendizado prático e a consolidação de conhecimentos** no desenvolvimento front-end moderno:
+
+- Aplicar conceitos modernos de desenvolvimento web
+- Organizar componentes e páginas no Next.js
+- Criar uma arquitetura clara e escalável
+- Desenvolver layouts responsivos com Tailwind CSS
+- Melhorar a experiência do usuário com boas práticas de UI e UX
+- Evoluir continuamente a qualidade do código e da interface
+
+## Observações
+
+> Este é um projeto em constante evolução. Novas seções, melhorias visuais e ajustes de código serão implementados conforme meu aprendizado avança.
+
+---
+
+**Feedbacks, sugestões e dicas são muito bem-vindos!** Este portfólio faz parte do meu processo contínuo de aprendizado e evolução como desenvolvedor.
+

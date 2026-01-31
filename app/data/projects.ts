@@ -14,7 +14,7 @@ export interface ProjectsProps {
 export const PROJECTS = [
   {
     title: "CoutinhoFlix",
-    desc: "Um catálogo de filmes desenvolvido para praticar o consumo de APIs e conceitos modernos de desenvolvimento web.",
+    desc: "Catálogo de filmes desenvolvido para praticar o consumo de APIs e a aplicação de conceitos modernos de desenvolvimento web com Next.js.",
     image: CoutinhoFlix,
     tecs: ["Next.js", "React.js", "TypeScript", "Tailwind", "TMDB Api"],
     demo: "https://portifolio-filmes.vercel.app/",
@@ -22,7 +22,7 @@ export const PROJECTS = [
   },
   {
     title: "Gerenciador de tarefas",
-    desc: "Sistema de organização de tarefas, com foco em funcionalidades simples e objetivas para praticar conceitos fundamentais do front-end moderno.",
+    desc: "Sistema de organização de tarefas desenvolvido com foco em funcionalidades simples e objetivas, aplicando conceitos fundamentais do front-end moderno.",
     image: Tarefas,
     tecs: ["React.js", "JavaScript", "Tailwind"],
     demo: "https://gerenciador-tarefas-ruddy.vercel.app/",
