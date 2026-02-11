@@ -4,14 +4,17 @@ import { useInView } from "../hooks/useInView";
 import { ProfileCard } from "./ui/cards";
 
 export default function About() {
-  const ref = useInView()
+  const ref = useInView();
 
   return (
     <section
       id="about"
       className="relative z-10 w-full flex justify-center h-fit"
     >
-      <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
+      <div
+        ref={ref}
+        className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
+      >
         <header className="flex flex-col gap-6">
           <p className="text-sm md:text-md text-primary font-mono">
             {"//"} Sobre mim
@@ -23,22 +26,28 @@ export default function About() {
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           <section className="text-md md:text-lg font-light w-full md:max-w-120 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             <p>
-              Sou um desenvolvedor apaixonado por tecnologia que recentemente
-              encontrou na programação um espaço para crescer e se desafiar
-              constantemente. Ao longo da minha jornada, venho explorando
-              diferentes tecnologias do desenvolvimento web, atuando tanto na
-              construção de interfaces quanto na lógica por trás das aplicações.
+              Sou estudante de Análise e Desenvolvimento de Sistemas pela PUC
+              Minas, atualmente em transição de carreira para a área de
+              tecnologia. Resido em Ribeirão Preto – SP e venho direcionando
+              meus estudos e projetos para o desenvolvimento de aplicações web,
+              com foco em soluções funcionais, organizadas e bem estruturadas.
             </p>
             <p>
-              Gosto de trabalhar em soluções completas, unindo organização,
-              criatividade e atenção aos detalhes para entregar aplicações
-              funcionais, intuitivas e bem estruturadas.
+              Tenho interesse especial em desenvolvimento fullstack, com maior
+              foco no frontend moderno, sem deixar de aprofundar conhecimentos
+              em backend e banco de dados. Ao longo da minha formação, venho
+              construindo projetos práticos que me permitem evoluir tanto na
+              parte técnica quanto na organização do código e na experiência do
+              usuário.
             </p>
             <p>
-              Busco constantemente novos desafios que me permitam aplicar meu
-              conhecimento em soluções práticas e eficientes, sempre prezando
-              por código limpo, boas práticas e projetos que realmente façam a
-              diferença.
+              Busco desenvolver aplicações que aliem clareza, eficiência e boas
+              práticas de desenvolvimento. Mais detalhes sobre as tecnologias e
+              ferramentas que utilizo estão disponíveis na seção{" "}
+              <a href="#skills" className="font-bold">
+                Skills
+              </a>
+              .
             </p>
           </section>
           {/* Card Perfil */}

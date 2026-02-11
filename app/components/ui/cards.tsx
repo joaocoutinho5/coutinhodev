@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Foto from "@/app/assets/joao.jpeg";
-import { BtnGithub, BtnLinkedin, BtnInstagram, BtnWpp } from "./buttons";
+import { BtnGitHub, BtnLinkedin, BtnInstagram, BtnWpp } from "./buttons";
 import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
 import { LuGithub, LuExternalLink } from "react-icons/lu";
@@ -25,7 +25,7 @@ export function ProfileCard() {
       </div>
       <span className="w-full h-px bg-border my-3" />
       <div className="flex flex-row text-foreground/65 gap-2">
-        <BtnGithub />
+        <BtnGitHub />
         <BtnLinkedin />
         <BtnInstagram />
       </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import { useInView } from "../hooks/useInView";
-
 import { BtnCurriculo } from "./ui/buttons";
 
 export default function Hero() {
@@ -31,9 +30,10 @@ export default function Hero() {
             eficientes com tecnologias modernas e boas práticas.
           </p>
         </header>
-        <div ref={btnRef} className="fade-down delay-4">
+        
+        {/* <div ref={btnRef} className="fade-down delay-4">
           <BtnCurriculo />
-          </div>
+          </div> */}
         
 
         {/* Background decoration*/}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TooltipLabel } from "../tooltipLabel";
 
 import { FileText } from "lucide-react";
 import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
@@ -13,39 +14,48 @@ export function BtnCurriculo() {
   );
 }
 
-export function BtnGithub() {
+export function BtnGitHub() {
   return (
-    <Link
-      href="https://github.com/joaocoutinho5"
-      className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
-      target="_blank"
-    >
-      <LuGithub size={20} />
-    </Link>
+    <div className="relative group inline-flex items-center justify-center">
+      <Link
+        href="https://github.com/joaocoutinho5"
+        className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
+        target="_blank"
+      >
+        <LuGithub size={20} />
+      </Link>
+      <TooltipLabel label="GitHub" />
+    </div>
   );
 }
 
 export function BtnLinkedin() {
   return (
-    <Link
-      href="https://www.linkedin.com/in/joaocoutinho5"
-      className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
-      target="_blank"
-    >
-      <LuLinkedin size={20} />
-    </Link>
+    <div className="relative group inline-flex items-center justify-center">
+      <Link
+        href="https://www.linkedin.com/in/joaocoutinho5"
+        className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
+        target="_blank"
+      >
+        <LuLinkedin size={20} />
+      </Link>
+      <TooltipLabel label="Linkedin" />
+    </div>
   );
 }
 
 export function BtnInstagram() {
   return (
-    <Link
-      href="https://www.instagram.com/jaocoutinho5/"
-      className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
-      target="_blank"
-    >
-      <LuInstagram size={20} />
-    </Link>
+    <div className="relative group inline-flex items-center justify-center">
+      <Link
+        href="https://www.instagram.com/jaocoutinho5/"
+        className="p-3 rounded-xl hover:text-primary bg-border/50 hover:bg-border/30 transition"
+        target="_blank"
+      >
+        <LuInstagram size={20} />
+      </Link>
+      <TooltipLabel label="Instagram" />
+    </div>
   );
 }
 
@@ -57,7 +67,7 @@ export function BtnWpp() {
       target="_blank"
     >
       <FaWhatsapp className="text-lg md:text-2xl group-hover:rotate-20 transition" />
-      Enviar mensagem
+      Enviar uma mensagem
     </Link>
   );
 }
