@@ -13,7 +13,21 @@ const NAV_ITEMS = [
 ];
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("sobre");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
@@ -26,7 +40,7 @@ export default function Navbar() {
           }
         });
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -36,35 +50,41 @@ export default function Navbar() {
 
   return (
     <header className="w-full fixed top-0 z-50">
-      <div className="w-full bg-background/50 backdrop-blur-lg flex justify-center py-7 md:py-8">
-        <nav className="text-foreground/90 flex w-full justify-between px-5 xl:px-12 transition-all">
-          {/* LOGO */}
-          <a
-            href="#"
-            className="flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition"
-          >
-            coutinho
-            <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
-            dev
-          </a>
+      <nav
+        className={`text-foreground/90 w-full fixed top-0 z-50 flex justify-between items-center px-5 xl:px-12 transition-all duration-300
+        ${
+          scrolled
+            ? "bg-background/50 backdrop-blur-lg border-b border-border/50 shadow-lg py-6"
+            : "bg-transparent border-b border-transparent py-10"
+        }`}
+      >
+        {/* LOGO */}
 
-          {/* LINKS */}
-          <div className="hidden font-mono md:flex text-foreground/90 items-center gap-9">
-            {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.id;
+        <a
+          href="#"
+          className="flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition"
+        >
+          coutinho
+          <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
+          dev
+        </a>
 
-              return (
-                <NavLinks
-                  key={item.id}
-                  href={`#${item.id}`}
-                  label={item.label}
-                  active={isActive}
-                />
-              );
-            })}
-          </div>
-        </nav>
-      </div>
+        {/* LINKS */}
+        <div className="hidden font-mono md:flex text-foreground/90 items-center gap-9">
+          {NAV_ITEMS.map((item) => {
+            const isActive = activeSection === item.id;
+
+            return (
+              <NavLinks
+                key={item.id}
+                href={`#${item.id}`}
+                label={item.label}
+                active={isActive}
+              />
+            );
+          })}
+        </div>
+      </nav>
       <MobileMenu />
     </header>
   );
