@@ -3,6 +3,7 @@
 import { useInView } from "../hooks/useInView";
 import { PROJECTS } from "@/app/data/projects";
 import { ProjectCard } from "./ui/cards";
+import { SectionHeader } from "./sectionHeader";
 
 export default function Projects() {
   const ref = useInView();
@@ -12,19 +13,13 @@ export default function Projects() {
       id="projects"
       className="relative z-10 w-full flex justify-center h-fit"
     >
-      <div ref={ref} className="container flex flex-col justify-center items-start gap-8 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
-        <header className="flex flex-col gap-6">
-          <p className="text-sm md:text-md text-primary font-mono">
-            {"//"} Meus projetos
-          </p>
-          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
-            Projetos em destaque
-          </h1>
-          <p className="text-md md:text-lg font-light max-w-150 text-foreground/65 flex flex-col gap-4 leading-relaxed">
-            Uma seleção dos meus projetos mais recentes e relevantes que
-            demonstram minhas habilidades técnicas e criativas.
-          </p>
-        </header>
+      <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
+        <SectionHeader
+          subtitle="Meus projetos"
+          title="Projetos em destaque"
+          description="Uma seleção dos meus projetos mais recentes e relevantes que
+            demonstram minhas habilidades técnicas e criativas."
+        />
         <section
           className="grid
           grid-cols-[repeat(auto-fill,minmax(280px,1fr))]

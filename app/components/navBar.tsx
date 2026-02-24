@@ -54,8 +54,8 @@ export default function Navbar() {
         className={`text-foreground/90 w-full fixed top-0 z-50 flex justify-between items-center px-5 xl:px-12 transition-all duration-300
         ${
           scrolled
-            ? "bg-background/50 backdrop-blur-lg border-b border-border/50 shadow-lg py-6"
-            : "bg-transparent border-b border-transparent py-10"
+            ? "bg-background/50 backdrop-blur-lg md:border-b md:border-border/50 shadow-lg py-8 md:py-6"
+            : "bg-transparent md:border-b md:border-transparent py-8 md:py-10"
         }`}
       >
         {/* LOGO */}

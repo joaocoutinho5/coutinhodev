@@ -67,7 +67,7 @@ export function BtnWpp() {
       target="_blank"
     >
       <FaWhatsapp className="text-lg md:text-2xl group-hover:rotate-20 transition" />
-      Enviar uma mensagem
+      Enviar mensagem
     </Link>
   );
 }

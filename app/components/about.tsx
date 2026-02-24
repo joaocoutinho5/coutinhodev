@@ -1,6 +1,6 @@
 "use client";
 import { useInView } from "../hooks/useInView";
-
+import { SectionHeader } from "./sectionHeader";
 import { ProfileCard } from "./ui/cards";
 
 export default function About() {
@@ -15,14 +15,10 @@ export default function About() {
         ref={ref}
         className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
       >
-        <header className="flex flex-col gap-6">
-          <p className="text-sm md:text-md text-primary font-mono">
-            {"//"} Sobre mim
-          </p>
-          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
-            Quem sou eu
-          </h1>
-        </header>
+        <SectionHeader
+          subtitle="Sobre mim"
+          title="Quem sou eu"
+        />
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           <section className="text-md md:text-lg font-light w-full md:max-w-120 text-foreground/65 flex flex-col gap-4 leading-relaxed">
             <p>

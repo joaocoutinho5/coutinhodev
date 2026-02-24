@@ -2,6 +2,7 @@
 
 import { useInView } from "../hooks/useInView";
 import { ContactCard } from "./ui/cards";
+import { SectionHeader } from "./sectionHeader";
 
 export default function Contact() {
   const ref = useInView();
@@ -11,19 +12,17 @@ export default function Contact() {
       id="contact"
       className="relative z-10 w-full flex justify-center h-fit"
     >
-      <div ref={ref} className="container flex flex-col justify-center items-center text-center gap-8 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
-        <header className="flex flex-col gap-6">
-          <p className="text-sm md:text-md text-primary font-mono">
-            {"//"} Entre em contato
-          </p>
-          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
-            Vamos conversar
-          </h1>
-          <p className="text-md md:text-lg font-light max-w-180 text-foreground/65 flex flex-col gap-4 leading-relaxed">
-            Estou sempre aberto a novas oportunidades e projetos interessantes.
-            Se você tem uma ideia em mente, vamos conversar!
-          </p>
-        </header>
+      <div
+        ref={ref}
+        className="container flex flex-col justify-center items-center text-center gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
+      >
+        <SectionHeader
+          subtitle="Entre em contato"
+          title="Vamos conversar"
+          description="Estou sempre aberto a novas oportunidades e projetos interessantes.
+            Se você tem uma ideia em mente, vamos conversar!"
+          align="center"
+        />
         <section className="w-full min-h- md:min-h- flex flex-col items-center justify-center gap-10">
           <ContactCard />
         </section>

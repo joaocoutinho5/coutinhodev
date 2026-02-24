@@ -11,7 +11,7 @@ export default function Hero() {
   const btnRef = useInView()
 
   return (
-    <section id="start" className="relative z-10 w-full flex justify-center">
+    <section id="hero" className="relative z-10 w-full flex justify-center">
       <div className="container min-h-screen flex flex-col gap-10 justify-center mx-2 md:mx-0">
         <header className="flex flex-col gap-6">
             <p ref={subtitleRef} className="text-sm md:text-md text-primary font-mono fade-down">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView } from "../hooks/useInView";
-
+import { SectionHeader } from "./sectionHeader";
 import { SkillsTabs } from "./skill-tabs";
 import { SkillsContent } from "./skill-content";
 import { useState } from "react";
@@ -17,18 +17,11 @@ export default function Skills() {
       className="relative z-10 w-full flex justify-center h-fit"
     >
       <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
-        <header className="flex flex-col gap-6">
-          <p className="text-sm md:text-md text-primary font-mono">
-            {"//"} Skills e tecnologias
-          </p>
-          <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
-            Minhas habilidades
-          </h1>
-          <p className="text-md md:text-lg font-light max-w-150 text-foreground/65 flex flex-col gap-4 leading-relaxed">
-            Tecnologias e ferramentas que utilizo para transformar ideias em
-            produtos digitais de alta qualidade.
-          </p>
-        </header>
+        <SectionHeader 
+          subtitle="Skills e tecnologias"
+          title="Minhas habilidades"
+          description="Tecnologias e ferramentas que utilizo para transformar ideias em produtos digitais de alta qualidade."
+        />
 
         <section className="w-full min-h-128 md:min-h-72 flex flex-col gap-10">
           {/* tabs */}
