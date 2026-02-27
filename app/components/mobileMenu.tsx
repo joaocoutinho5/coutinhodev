@@ -43,21 +43,21 @@ export function MobileMenu() {
       {/* Botão Hambúrguer */}
       <button
         onClick={toggleMenu}
-        className="fixed top-6 right-6 z-50 flex h-10 w-10 flex-col items-center justify-center gap-1 md:hidden"
+        className="fixed w-16 h-12 top-6 right-6 flex md:hidden flex-col items-center justify-center bg-card/45 backdrop-blur-lg border border-border/50 shadow-lg rounded-full z-50 gap-1"
         aria-label="Abrir menu"
       >
         <span
-          className={`h-0.5 w-6 bg-foreground transition-all duration-300 ${
+          className={`h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 ${
             open ? "translate-y-1.5 rotate-45" : ""
           }`}
         />
         <span
-          className={`h-0.5 w-6 bg-foreground transition-all duration-300 ${
+          className={`h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 ${
             open ? "opacity-0" : ""
           }`}
         />
         <span
-          className={`h-0.5 w-6 bg-foreground transition-all duration-300 ${
+          className={`h-0.5 w-6 bg-foreground rounded-full transition-all duration-300 ${
             open ? "-translate-y-1.5 -rotate-45" : ""
           }`}
         />

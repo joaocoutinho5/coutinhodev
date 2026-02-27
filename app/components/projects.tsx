@@ -15,10 +15,8 @@ export default function Projects() {
     >
       <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
         <SectionHeader
-          subtitle="Meus projetos"
           title="Projetos em destaque"
-          description="Uma seleção dos meus projetos mais recentes e relevantes que
-            demonstram minhas habilidades técnicas e criativas."
+          number="3"
         />
         <section
           className="grid

@@ -17,12 +17,10 @@ export default function Skills() {
       className="relative z-10 w-full flex justify-center h-fit"
     >
       <div ref={ref} className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main">
-        <SectionHeader 
-          subtitle="Skills e tecnologias"
+        <SectionHeader
           title="Minhas habilidades"
-          description="Tecnologias e ferramentas que utilizo para transformar ideias em produtos digitais de alta qualidade."
+          number="2"
         />
-
         <section className="w-full min-h-128 md:min-h-72 flex flex-col gap-10">
           {/* tabs */}
           <SkillsTabs activeTab={activeTab} onChange={setActiveTab} />

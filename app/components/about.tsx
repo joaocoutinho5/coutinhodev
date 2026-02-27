@@ -16,8 +16,8 @@ export default function About() {
         className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
       >
         <SectionHeader
-          subtitle="Sobre mim"
-          title="Quem sou eu"
+          title="Sobre mim"
+          number="1"
         />
         <div className="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
           <section className="text-md md:text-lg font-light w-full md:max-w-120 text-foreground/65 flex flex-col gap-4 leading-relaxed">

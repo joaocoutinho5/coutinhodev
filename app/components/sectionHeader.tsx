@@ -1,6 +1,7 @@
 interface SectionHeaderProps {
-  subtitle: string;
+  subtitle?: string;
   title: string;
+  number?: string;
   description?: string;
   align?: "left" | "center";
 }
@@ -8,6 +9,7 @@ interface SectionHeaderProps {
 export function SectionHeader({
   subtitle,
   title,
+  number,
   description,
   align = "left",
 }: SectionHeaderProps) {
@@ -21,12 +23,14 @@ export function SectionHeader({
       `}
     >
       <div className="flex flex-col gap-4">
-        <p className="text-sm md:text-md text-primary font-mono">
-          {"//"} {subtitle}
-        </p>
+        <p className="text-sm md:text-md text-primary font-mono">{subtitle}</p>
 
-        <h1 className="text-3xl md:text-5xl text-foreground/90 font-bold">
+        <h1 className="relative inline-block text-3xl md:text-5xl text-foreground font-bold">
           {title}
+
+          <span className="absolute -top-2 -right-6 text-xs md:text-sm font-mono text-primary">
+            ({number})
+          </span>
         </h1>
 
         {description && (

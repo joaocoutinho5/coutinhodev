@@ -63,7 +63,7 @@ export function BtnWpp() {
   return (
     <Link
       href="https://wa.me/5516993531000?text=Ol%C3%A1,%20Jo%C3%A3o!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
-      className="group w-72 md:w-fit text-md md:text-lg text-primary bg-primary/20 border border-primary/40 hover:shadow-[0_0_22px_rgba(168,85,247,0.35)] hover:scale-101 px-10 py-5 rounded-full transition duration-350 ease-out flex flex-row justify-center items-center gap-2"
+      className="group md:w-fit w-full text-md md:text-lg text-primary bg-primary/20 border border-primary/40 hover:shadow-[0_0_22px_rgba(168,85,247,0.35)] hover:scale-101 px-10 py-5 rounded-full transition duration-350 ease-out flex flex-row justify-center items-center gap-2"
       target="_blank"
     >
       <FaWhatsapp className="text-lg md:text-2xl group-hover:rotate-20 transition" />

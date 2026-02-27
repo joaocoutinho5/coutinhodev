@@ -51,26 +51,13 @@ export default function Navbar() {
   return (
     <header className="w-full fixed top-0 z-50">
       <nav
-        className={`text-foreground/90 w-full fixed top-0 z-50 flex justify-between items-center px-5 xl:px-12 transition-all duration-300
-        ${
-          scrolled
-            ? "bg-background/50 backdrop-blur-lg md:border-b md:border-border/50 shadow-lg py-8 md:py-6"
-            : "bg-transparent md:border-b md:border-transparent py-8 md:py-10"
-        }`}
+        className={`fixed hidden md:flex text-foreground/90 w-6 md:w-fit justify-center items-center backdrop-blur-lg border border-border/50 shadow-lg rounded-full right-6 md:left-1/2 md:-translate-x-1/2 z-50 p-2 transition-all duration-300
+        ${scrolled ? "md:bottom-6 bg-card/45" : "md:bottom-10 bg-card/30"}`}
       >
         {/* LOGO */}
 
-        <a
-          href="#"
-          className="flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition"
-        >
-          coutinho
-          <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
-          dev
-        </a>
-
         {/* LINKS */}
-        <div className="hidden font-mono md:flex text-foreground/90 items-center gap-9">
+        <div className="hidden font-mono md:flex text-foreground/90 items-center gap-px">
           {NAV_ITEMS.map((item) => {
             const isActive = activeSection === item.id;
 

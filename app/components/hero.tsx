@@ -1,66 +1,142 @@
 "use client";
 
+import Link from "next/link";
 import { useInView } from "../hooks/useInView";
-import { BtnCurriculo } from "./ui/buttons";
+//import { BtnCurriculo } from "./ui/buttons";
+import { Mail, MapPin } from "lucide-react";
+import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
+import Grainient from "./ui/heroBg";
+import { ScrollIndicator } from "./ui/scrollIndicator";
 
 export default function Hero() {
-  const subtitleRef = useInView()
-  const titleRef = useInView()
-  const descRef = useInView()
-  const subDescRef = useInView()
-  const btnRef = useInView()
+  const subtitleRef = useInView();
+  const titleRef = useInView();
+  const linksRef = useInView();
+  const linksRefMbl = useInView();
+  //const btnRef = useInView();
 
   return (
     <section id="hero" className="relative z-10 w-full flex justify-center">
+      <div className="absolute inset-0 z-0">
+        <Grainient
+          color1="#000000"
+          color2="#000000"
+          color3="#8f09ce"
+          timeSpeed={0.25}
+          colorBalance={0}
+          warpStrength={1}
+          warpFrequency={5}
+          warpSpeed={2}
+          warpAmplitude={50}
+          blendAngle={0}
+          blendSoftness={0.05}
+          rotationAmount={500}
+          noiseScale={2}
+          grainAmount={0.1}
+          grainScale={2}
+          grainAnimated={false}
+          contrast={1.5}
+          gamma={1}
+          saturation={1}
+          centerX={0}
+          centerY={0}
+          zoom={0.9}
+        />
+        <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2">
+          <ScrollIndicator />
+        </div>
+      </div>
       <div className="container min-h-screen flex flex-col gap-10 justify-center mx-2 md:mx-0">
-        <header className="flex flex-col gap-6">
-            <p ref={subtitleRef} className="text-sm md:text-md text-primary font-mono fade-down">
-              {"//"} Ola, eu sou
-            </p>
-            <h1 ref={titleRef} className="text-5xl md:text-6xl font-bold fade-down delay-1">
-              João Pedro Coutinho
-              <span className="text-primary">.</span>
-            </h1>
-
-          <h2 ref={descRef} className="text-2xl md:text-4xl text-foreground/65 font-semibold fade-down delay-2">
-            Full-Stack Developer
-          </h2>
-          <p ref={subDescRef} className="text-md md:text-lg font-light text-foreground/65 max-w-150 fade-down delay-3">
-            Desenvolvedor web em constante aprendizado, criando soluções
-            eficientes com tecnologias modernas e boas práticas.
+        <p className="absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
+          coutinho
+          <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
+          dev
+        </p>
+        <p className="hidden md:flex absolute top-9 md:top-8 right-6 md:right-8 items-center gap-2 text-lg">
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+          </span>
+          open to work
+        </p>
+        <header className="flex flex-col justify-center items-center text-center gap-4">
+          <p
+            ref={subtitleRef}
+            className="text-md md:text-lg text-primary fade-down"
+          >
+            Fullstack Developer
           </p>
+          <h1
+            ref={titleRef}
+            className="text-6xl md:text-7xl font-bold fade-down delay-1 text-white/90"
+          >
+            João Pedro Coutinho
+          </h1>
+          <div
+            ref={linksRef}
+            className="hidden max-w-150 text-sm md:text-base md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 fade-down delay-2"
+          >
+            {/* Coluna 1 */}
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary" />
+                <span className="text-white/65">coutinhodev@outlook.com</span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <LuGithub className="w-5 h-5 text-primary" />
+                <span className="text-white/65">github.com/joaocoutinho5</span>
+              </div>
+            </div>
+
+            {/* Coluna 2 */}
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <LuLinkedin className="w-5 h-5 text-primary" />
+                <span className="text-white/65">
+                  linkedin.com/in/joaocoutinho5
+                </span>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-primary" />
+                <span className="text-white/65">Ribeirão Preto, SP</span>
+              </div>
+            </div>
+          </div>
+          <div
+            ref={linksRefMbl}
+            className="flex flex-row md:hidden justify-center items-center gap-6 md:gap-8 mt-6 fade-down delay-2"
+          >
+            <Link
+              href="https://github.com/joaocoutinho5/coutinhodev"
+              className="text-primary transition"
+              target="_blank"
+            >
+              <LuGithub size={22} />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/joaocoutinho5"
+              className="text-primary transition"
+              target="_blank"
+            >
+              <LuLinkedin size={22} />
+            </Link>
+            <Link
+              href="https://github.com/joaocoutinho5"
+              className="text-primary transition"
+              target="_blank"
+            >
+              <LuInstagram size={22} />
+            </Link>
+          </div>
         </header>
-        
+
         {/* <div ref={btnRef} className="fade-down delay-4">
           <BtnCurriculo />
           </div> */}
-        
 
         {/* Background decoration*/}
-        
-      </div>
-      <div className="absolute -z-10 inset-0 pointer-events-none overflow-hidden">
-          {/* Diagonal accent lines */}
-          <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-20 -left-20 w-100 h-px bg-linear-to-r from-transparent via-primary/20 md:via-primary/40 to-transparent rotate-45" />
-            <div className="absolute top-40 -left-10 w-75 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent rotate-45" />
-            <div className="absolute bottom-32 -right-20 w-87.5 h-px bg-linear-to-r from-transparent via-primary/30 to-transparent -rotate-45" />
-          </div>
-
-          {/* Corner brackets */}
-          <div className="absolute top-2 left-2 md:top-8 md:left-8 w-16 h-16 border-l-2 border-t-2 border-primary/10 rounded-tl-lg" />
-          <div className="absolute bottom-2 right-2 md:bottom-8 md:right-8 w-16 h-16 border-r-2 border-b-2 border-primary/10 rounded-br-lg" />
-
-          {/* Floating dots */}
-          <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-primary/40 rounded-full animate-pulse" />
-          <div
-            className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse"
-            style={{ animationDelay: "0.5s" }}
-          />
-          <div
-            className="absolute bottom-1/4 left-1/3 w-1 h-1 bg-primary/35 rounded-full animate-pulse"
-            style={{ animationDelay: "1s" }}
-          />
       </div>
     </section>
   );
