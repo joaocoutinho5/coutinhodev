@@ -42,11 +42,11 @@ export default function Hero() {
           centerY={0}
           zoom={0.9}
         />
+      </div>
+      <div id="hero-content" className="w-full min-h-screen flex flex-col gap-10 justify-center items-center mx-2 md:mx-0">
         <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2">
           <ScrollIndicator />
         </div>
-      </div>
-      <div className="container min-h-screen flex flex-col gap-10 justify-center mx-2 md:mx-0">
         <p className="absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
           coutinho
           <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
@@ -59,7 +59,7 @@ export default function Hero() {
           </span>
           open to work
         </p>
-        <header className="flex flex-col justify-center items-center text-center gap-4">
+        <header className="container flex flex-col justify-center items-center text-center gap-4">
           <p
             ref={subtitleRef}
             className="text-md md:text-lg text-primary fade-down"

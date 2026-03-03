@@ -28,30 +28,6 @@ export default function Projects() {
           ))}
         </section>
       </div>
-
-      <div className="absolute -z-10 inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] left-[12%] w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
-
-        <div
-          className="absolute top-[18%] right-[14%] w-1.5 h-1.5 bg-primary/35 rounded-full animate-pulse"
-          style={{ animationDelay: "0.5s" }}
-        />
-
-        <div
-          className="absolute bottom-[16%] left-[14%] w-3 h-3 bg-primary/30 rounded-full animate-pulse"
-          style={{ animationDelay: "1.1s" }}
-        />
-
-        <div
-          className="absolute bottom-[12%] right-[12%] w-2 h-2 bg-primary/40 rounded-full animate-pulse"
-          style={{ animationDelay: "1.7s" }}
-        />
-
-        <div
-          className="absolute top-[45%] left-[6%] w-1.5 h-1.5 bg-primary/30 rounded-full animate-pulse"
-          style={{ animationDelay: "2.3s" }}
-        />
-      </div>
     </section>
   );
 }

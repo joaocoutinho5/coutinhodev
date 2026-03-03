@@ -40,7 +40,7 @@ export default function About() {
               Busco desenvolver aplicações que aliem clareza, eficiência e boas
               práticas de desenvolvimento. Mais detalhes sobre as tecnologias e
               ferramentas que utilizo estão disponíveis na seção{" "}
-              <a href="#skills" className="font-bold">
+              <a href="#skills" className="font-bold text-primary hover:underline">
                 Skills
               </a>
               .
@@ -49,24 +49,6 @@ export default function About() {
           {/* Card Perfil */}
           <ProfileCard />
         </div>
-      </div>
-
-      {/* Background decoration - geometric grid pattern */}
-      <div className="absolute -z-10 inset-0 pointer-events-none overflow-hidden">
-        {/* Animated floating orbs */}
-        <div className="absolute top-20 left-10 w-2 h-2 bg-primary/40 rounded-full animate-pulse" />
-        <div
-          className="absolute top-40 right-20 w-3 h-3 bg-primary/30 rounded-full animate-pulse"
-          style={{ animationDelay: "0.5s" }}
-        />
-        <div
-          className="absolute bottom-32 left-1/4 w-2 h-2 bg-primary/35 rounded-full animate-pulse"
-          style={{ animationDelay: "1s" }}
-        />
-        <div
-          className="absolute top-1/3 right-1/3 w-1.5 h-1.5 bg-primary/40 rounded-full animate-pulse"
-          style={{ animationDelay: "1.5s" }}
-        />
       </div>
     </section>
   );
