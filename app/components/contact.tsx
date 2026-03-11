@@ -14,8 +14,7 @@ export default function Contact() {
       className="relative z-10 w-full flex justify-center h-fit"
     >
       <div
-        ref={ref}
-        className="container flex flex-col justify-center items-start text-center gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
+        className="container flex flex-col justify-center items-start text-center gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0"
       >
         <SectionHeader title="Entre em contato" number="4" />
         <section className="w-full min-h- md:min-h- flex flex-col items-center justify-center gap-4 md:gap-6 mt-10">

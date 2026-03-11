@@ -12,8 +12,7 @@ export default function About() {
       className="relative z-10 w-full flex justify-center h-fit"
     >
       <div
-        ref={ref}
-        className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0 fade-down delay-main"
+        className="container flex flex-col justify-center items-start gap-12 pt-30 pb-30 md:pb-40 mx-2 md:mx-0"
       >
         <SectionHeader
           title="Sobre mim"

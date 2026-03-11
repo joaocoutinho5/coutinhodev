@@ -18,11 +18,13 @@ export default function Home() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+    gsap.ticker.lagSmoothing(0);
+
     // Inicialização do Smoother
     smoother.current = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.5,
+      smooth: 1,
       effects: true,
       normalizeScroll: true,
     });
@@ -32,7 +34,7 @@ export default function Home() {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const link = target.closest("a");
-      
+
       if (link && link.hash && link.origin === window.location.origin) {
         e.preventDefault();
         // Usa o smoother para rolar até o elemento com suavidade
@@ -48,7 +50,7 @@ export default function Home() {
       y: -100,
       scrollTrigger: {
         trigger: "#content-container",
-        start: "top 90%", 
+        start: "top 90%",
         end: "top 20%",
         scrub: true,
       },
@@ -56,21 +58,25 @@ export default function Home() {
 
     return () => {
       document.removeEventListener("click", handleAnchorClick);
-      if (smoother.current) smoother.current.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      smoother.current?.kill();
     };
   }, []);
 
   return (
     <div id="smooth-wrapper" className="w-full h-screen overflow-hidden">
-
       {/* HERO FIXA NO FUNDO */}
-      <section id="hero-section" className="fixed top-0 left-0 w-full h-screen z-0">
+      <section
+        id="hero-section"
+        className="fixed top-0 left-0 w-full h-screen z-0"
+      >
         <Hero />
       </section>
 
       {/* CONTEÚDO QUE SOBE */}
-      <div id="smooth-content" className="relative z-10 w-full pointer-events-none">
+      <div
+        id="smooth-content"
+        className="relative z-10 w-full pointer-events-none"
+      >
         <div id="home" className="h-screen w-full bg-transparent" />
         <div
           id="content-container"
