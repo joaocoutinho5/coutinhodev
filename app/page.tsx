@@ -63,11 +63,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div id="smooth-wrapper" className="w-full h-screen overflow-hidden">
+    <div id="smooth-wrapper" className="w-full min-h-[100dvh] overflow-hidden">
       {/* HERO FIXA NO FUNDO */}
       <section
         id="hero-section"
-        className="fixed top-0 left-0 w-full h-screen z-0"
+        className="fixed top-0 left-0 w-full min-h-[100dvh] z-0"
       >
         <Hero />
       </section>
@@ -77,7 +77,7 @@ export default function Home() {
         id="smooth-content"
         className="relative z-10 w-full pointer-events-none"
       >
-        <div id="home" className="h-screen w-full bg-transparent" />
+        <div id="home" className="min-h-[100dvh] w-full bg-transparent" />
         <div
           id="content-container"
           className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px] pointer-events-auto"
