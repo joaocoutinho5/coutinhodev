@@ -1,6 +1,6 @@
 # Portfólio Pessoal
 
-[![Acessar Projeto](https://img.shields.io/badge/Acessar%20Projeto-Online-success)]()
+[![Acessar Projeto](https://img.shields.io/badge/Acessar%20Projeto-Online-success)](https://coutinhodev.vercel.app/)
 
 Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e evolução no desenvolvimento web, aplicando conceitos modernos de front-end.
 
