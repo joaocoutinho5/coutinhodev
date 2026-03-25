@@ -36,7 +36,7 @@ export default function Footer() {
                 </Link>
               </div>
               <div className="relative group">
-                <Link href="https://github.com/joaocoutinho5" target="_blank">
+                <Link href="https://www.instagram.com/jaocoutinho5" target="_blank">
                   <p>Instagram</p>
                 </Link>
               </div>
@@ -93,7 +93,7 @@ export default function Footer() {
               </div>
               <div className="relative group">
                 <Link
-                  href="https://github.com/joaocoutinho5"
+                  href="https://www.instagram.com/jaocoutinho5/"
                   className="hover:text-primary transition"
                   target="_blank"
                 >
