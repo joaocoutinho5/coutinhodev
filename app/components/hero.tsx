@@ -43,7 +43,10 @@ export default function Hero() {
           zoom={0.9}
         />
       </div>
-      <div id="hero-content" className="w-full min-h-screen flex flex-col gap-10 justify-center items-center mx-2 md:mx-0">
+      <div
+        id="hero-content"
+        className="w-full min-h-[100dvh] flex flex-col gap-10 justify-center items-center mx-2 md:mx-0"
+      >
         <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2">
           <ScrollIndicator />
         </div>
@@ -52,13 +55,18 @@ export default function Hero() {
           <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
           dev
         </p>
-        <p className="hidden md:flex absolute top-9 md:top-8 right-6 md:right-8 items-center gap-2 text-lg">
+        <Link
+          href="https://www.linkedin.com/in/joaocoutinho5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex absolute top-9 md:top-8 right-6 md:right-8 items-center gap-2 text-lg"
+        >
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
           </span>
           open to work
-        </p>
+        </Link>
         <header className="container flex flex-col justify-center items-center text-center gap-4">
           <p
             ref={subtitleRef}

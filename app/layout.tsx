@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/navBar";
-import Footer from "./components/footer";
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Portifólio | Coutinho Dev",
@@ -28,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className="min-h-screen w-full flex flex-col justify-center items-center">
+      <body className="min-h-[100dvh] w-full flex flex-col justify-center items-center">
         <NavBar />
         {children}
       </body>
