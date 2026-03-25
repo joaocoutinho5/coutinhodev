@@ -31,7 +31,7 @@ export function SkillsTabs({ activeTab, onChange }: SkillsTabsProps) {
               />
             )}
 
-            <span className={isActive ? "text-foreground/90" : ""}>
+            <span className={isActive ? "text-foreground" : ""}>
               {tab === "frontend"
                 ? "Front-end"
                 : tab === "backend"

@@ -31,7 +31,6 @@ export default function RootLayout({
       <body className="min-h-screen w-full flex flex-col justify-center items-center">
         <NavBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
