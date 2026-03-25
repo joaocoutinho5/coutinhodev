@@ -5,9 +5,10 @@ import { StaticImageData } from "next/image";
 export interface ProjectsProps {
   title: string;
   desc: string;
-  image: StaticImageData;
+  image?: StaticImageData;
+  index: number;
   tecs: string[];
-  demo: string;
+  demo?: string;
   git?: string;
 }
 
@@ -27,5 +28,11 @@ export const PROJECTS = [
     tecs: ["React.js", "JavaScript", "Tailwind"],
     demo: "https://gerenciador-tarefas-ruddy.vercel.app/",
     git: "https://github.com/joaocoutinho5/gerenciador-tarefas",
+  },
+  {
+    title: "DB Veículos",
+    desc: "Aplicação de gerenciamento de veículos criada como projeto de estudo, explorando conceitos essenciais de ASP.NET MVC, como CRUD, controle de acesso e integração com banco de dados relacional.",
+    tecs:["HTML", "CSS", "C#", "SQL Server"],
+    git: "https://github.com/joaocoutinho5/db-veiculos",
   },
 ];

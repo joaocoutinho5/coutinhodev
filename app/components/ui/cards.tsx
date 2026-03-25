@@ -12,22 +12,44 @@ import { SkillItemProps } from "@/app/data/skills";
 
 export function ProfileCard() {
   return (
-    <div className="h-fit w-full md:max-w-100 shrink-0 flex flex-col justify-center items-center bg-card/50 backdrop-blur-xs border border-border/50 rounded-lg px-18 py-8 gap-2">
-      <div className="relative mb-4">
-        <div className="overflow-hidden rounded-full ring-2 ring-primary/30 ring-offset-4 ring-offset-background">
-          <Image alt="Foto" src={Foto} width={110} className="rounded-full" />
+    <div className="relative w-full md:max-w-105 bg-linear-to-br from-[#0f0f12] to-[#08080a] border border-border/50 rounded-xl p-8 overflow-hidden">
+      <div className="absolute inset-y-0 left-0 w-1 bg-primary" />
+      <div className="flex flex-col gap-6"> 
+        <div className="flex items-center gap-5">
+          <div className="relative">
+            <Image
+              alt="Foto"
+              src={Foto}
+              width={90}
+              className="rounded-full"
+            />
+            <span className="absolute bottom-0 right-0 w-5 h-5 bg-green-500 rounded-full border-2 border-background" />
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-foreground">
+              João Pedro Coutinho
+            </h3>
+            <p className="text-md text-foreground/60">
+              Desenvolvedor Full-Stack
+            </p>
+          </div>
         </div>
-        <div className="absolute -bottom-1 right-0 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
-      </div>
-      <div className="flex flex-col justify-center items-center gap-1">
-        <h3 className="text-xl text-foreground/90 font-semibold">João Pedro Coutinho</h3>
-        <p className="text-md text-foreground/65">Desenvolvedor Full-Stack</p>
-      </div>
-      <span className="w-full h-px bg-border my-3" />
-      <div className="flex flex-row text-foreground/65 gap-2">
-        <BtnGitHub />
-        <BtnLinkedin />
-        <BtnInstagram />
+        <span className="w-full h-px bg-border" />
+        <p className="text-sm text-foreground/60 leading-relaxed">
+          Desenvolvedor focado em criar aplicações web modernas, com atenção
+          à experiência do usuário, performance e boas práticas de código.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
+            Atenção a detalhes
+          </span>
+          <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
+            Aprendizado contínuo
+          </span>
+          <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
+            Código limpo
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -51,7 +73,7 @@ export function SkillItem({ name, icon: Icon }: SkillItemProps) {
       whileHover={{ y: -4 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
       className="flex flex-col justify-center items-center w-full gap-2 py-6 rounded-xl
-                bg-card/50 backdrop-blur-xs border border-border/50
+                bg-linear-to-br from-[#0f0f12] to-[#08080a] border border-border/50
                 text-foreground/65 hover:text-foreground/90
                 hover:border-primary/40"
     >
@@ -63,7 +85,7 @@ export function SkillItem({ name, icon: Icon }: SkillItemProps) {
 
 export function ContactCard() {
   return (
-    <div className="w-full md:max-w-200 flex flex-col justify-center items-center bg-card/50 backdrop-blur-xs border border-border/50 rounded-xl gap-6 px-6 md:px-12 py-12">
+    <div className="w-full md:max-w-200 flex flex-col justify-center items-center bg-linear-to-br from-[#0f0f12] to-[#08080a] border border-border/50 rounded-xl gap-6 px-6 md:px-12 py-12">
       <section className="text-start flex flex-col md:flex-row w-full max-w-71 md:max-w-full justify-between gap-6 md:gap-2 ">
         <div className="w-full flex flex-row justify-start items-center gap-4">
           <div className="p-3 rounded-xl text-primary bg-primary/10">
@@ -80,7 +102,9 @@ export function ContactCard() {
           </div>
           <div className="text-sm md:text-md">
             <h1 className="text-foreground/50 font-light">Localização</h1>
-            <p className="text-foreground/90">Ribeirão Preto, São Paulo, Brasil</p>
+            <p className="text-foreground/90">
+              Ribeirão Preto, São Paulo, Brasil
+            </p>
           </div>
         </div>
       </section>
@@ -97,6 +121,7 @@ export function ProjectCard({
   demo,
   git,
   image,
+  index,
 }: ProjectsProps) {
   return (
     <div
@@ -107,7 +132,7 @@ export function ProjectCard({
         rounded-2xl
         border
         border-border/50
-        bg-card/50
+        bg-linear-to-br from-[#0f0f12] to-[#08080a]
         transition-all
         duration-350
         ease-out
@@ -118,19 +143,35 @@ export function ProjectCard({
     >
       {/* Image */}
       <div className="relative h-48 w-full overflow-hidden">
-        <Image
-          src={image}
-          alt={`Preview do projeto ${title}`}
-          fill
-          className="object-cover"
-        />
+        {image ? (
+          <Image
+            src={image}
+            alt={`Preview do projeto ${title}`}
+            fill
+            className="object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-transparent" />
+        )}
+        <div className="absolute inset-0 flex items-center justify-center">
+          {/* Overlay gradient */}
+
+          {/* Número do projeto */}
+          {!image && (
+            <span className="font-mono text-6xl text-primary/20">
+              {String(index).padStart(2, "0")}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Content */}
       <div className="p-5 flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <h3 className="text-xl font-semibold text-foreground/90">{title}</h3>
-          <p className="text-sm font-light text-foreground/50 leading-relaxed">{desc}</p>
+          <p className="text-sm font-light text-foreground/50 leading-relaxed">
+            {desc}
+          </p>
         </div>
 
         {/* Techs */}
@@ -158,15 +199,16 @@ export function ProjectCard({
               Código
             </Link>
           )}
-
-          <Link
-            href={demo}
-            target="_blank"
-            className="flex flex-row justify-center items-center gap-2 text-sm text-foreground/50 hover:text-primary transition"
-          >
-            <LuExternalLink size={17} />
-            Demo
-          </Link>
+          {demo && (
+            <Link
+              href={demo}
+              target="_blank"
+              className="flex flex-row justify-center items-center gap-2 text-sm text-foreground/50 hover:text-primary transition"
+            >
+              <LuExternalLink size={17} />
+              Demo
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -19,9 +19,9 @@ export default function Contact() {
         <SectionHeader title="Entre em contato" number="4" />
         <section className="w-full min-h- md:min-h- flex flex-col items-center justify-center gap-4 md:gap-6 mt-10">
           <p className="text-lg text-foreground/65 font-extralight">
-            Quer trabalhar comigo?
+            Quer conversar comigo?
           </p>
-          <h2 className="text-6xl md:text-8xl text-foreground font-bold mb-10">
+          <h2 className="text-6xl md:text-7xl text-foreground font-bold mb-8">
             Diga olá!
           </h2>
           <div className="flex flex-col justify-center items-center gap-4">

@@ -8,6 +8,7 @@ import {
   SiTailwindcss,
   SiBootstrap,
   SiNodedotjs,
+  SiPython,
   SiPostgresql,
   SiIcloud,
   SiGit,
@@ -37,6 +38,7 @@ export const SKILLS: Record<SkillCategory, SkillItemProps[]> = {
     { name: "Bootstrap", icon: SiBootstrap },
   ],
   backend: [
+    { name: "Python", icon: SiPython},
     { name: "Node.js", icon: SiNodedotjs },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "REST APIs", icon: SiIcloud },
@@ -46,6 +48,5 @@ export const SKILLS: Record<SkillCategory, SkillItemProps[]> = {
     { name: "Git", icon: SiGit },
     { name: "GitHub", icon: SiGithub },
     { name: "Figma", icon: SiFigma },
-    { name: "Docker", icon: SiDocker },
   ],
 };

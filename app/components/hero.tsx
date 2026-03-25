@@ -109,7 +109,7 @@ export default function Hero() {
             className="flex flex-row md:hidden justify-center items-center gap-6 md:gap-8 mt-6 fade-down delay-2"
           >
             <Link
-              href="https://github.com/joaocoutinho5/coutinhodev"
+              href="https://github.com/joaocoutinho5"
               className="text-primary transition"
               target="_blank"
             >

@@ -23,8 +23,8 @@ export default function Projects() {
           grid-cols-[repeat(auto-fill,minmax(280px,1fr))]
           gap-6"
         >
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.title} {...project} />
+          {PROJECTS.map((project, index) => (
+            <ProjectCard key={project.title} {...project} index={index + 1} />
           ))}
         </section>
       </div>

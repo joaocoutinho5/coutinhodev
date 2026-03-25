@@ -19,6 +19,7 @@
 
   --card: #131316;
   --card-foreground: #f2f2f2;
+  --card-gradient: linear-gradient(to bottom right, #121215, #0c0c0f);
 
   --primary: #a855f7;
   --primary-foreground: #ffffff;
