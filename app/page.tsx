@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
+import Lenis from "lenis";
 
 import Hero from "./components/hero";
 import About from "./components/about";
@@ -13,74 +13,76 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 
 export default function Home() {
-  const smoother = useRef<ScrollSmoother | null>(null);
-
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-    gsap.ticker.lagSmoothing(0);
-
-    // Inicialização do Smoother
-    smoother.current = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1,
-      effects: true,
-      normalizeScroll: true,
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    // Resolvendo bug das âncoras
-    // Intercepta todos os links que começam com '#'
-    const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const link = target.closest("a");
+    lenis.on("scroll", ScrollTrigger.update);
 
-      if (link && link.hash && link.origin === window.location.origin) {
-        e.preventDefault();
-        // Usa o smoother para rolar até o elemento com suavidade
-        smoother.current?.scrollTo(link.hash, true, "top top");
-      }
+    const updateRaf = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(updateRaf);
+    gsap.ticker.lagSmoothing(0);
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 3. LOGICA DO SCROLL TO (Links Âncora)
+    const handleAnchorClick = (e: Event) => {
+  const targetElement = e.currentTarget as HTMLAnchorElement;
+  const target = targetElement.getAttribute("href");
+
+  if (target && target.startsWith("#")) {
+    e.preventDefault();
+    lenis.scrollTo(target, {
+      offset: 0,
+      immediate: false,
+      duration: 1.5,
+    });
+  }
     };
 
-    document.addEventListener("click", handleAnchorClick);
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => link.addEventListener("click", handleAnchorClick));
 
-    // Animação do Fade Out da Hero
     gsap.to("#hero-content", {
+      y: 500,
       opacity: 0,
-      y: -100,
+      ease: "none",
       scrollTrigger: {
         trigger: "#content-container",
-        start: "top 90%",
-        end: "top 20%",
+        start: "top 100%",
+        end: "top 30%",
         scrub: true,
       },
     });
 
+    ScrollTrigger.refresh();
+
     return () => {
-      document.removeEventListener("click", handleAnchorClick);
-      smoother.current?.kill();
+      lenis.destroy();
+      gsap.ticker.remove(updateRaf);
+      links.forEach((link) =>
+        link.removeEventListener("click", handleAnchorClick),
+      );
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
   return (
-    <div id="smooth-wrapper" className="w-full min-h-[100dvh] overflow-hidden">
-      {/* HERO FIXA NO FUNDO */}
+    <div className="w-full min-h-screen">
       <section
         id="hero-section"
-        className="fixed top-0 left-0 w-full min-h-[100dvh] z-0"
+        className="relative w-full h-dvh overflow-hidden z-0"
       >
         <Hero />
       </section>
-
-      {/* CONTEÚDO QUE SOBE */}
-      <div
-        id="smooth-content"
-        className="relative z-10 w-full pointer-events-none"
-      >
-        <div id="home" className="min-h-[100dvh] w-full bg-transparent" />
+      <div className="relative z-10 w-full">
         <div
           id="content-container"
-          className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px] pointer-events-auto"
+          className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px]"
         >
           <About />
           <Skills />

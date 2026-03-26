@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useInView } from "../hooks/useInView";
-//import { BtnCurriculo } from "./ui/buttons";
 import { Mail, MapPin } from "lucide-react";
 import { LuGithub, LuLinkedin, LuInstagram } from "react-icons/lu";
 import Grainient from "./ui/heroBg";
@@ -13,11 +12,14 @@ export default function Hero() {
   const titleRef = useInView();
   const linksRef = useInView();
   const linksRefMbl = useInView();
-  //const btnRef = useInView();
 
   return (
-    <section id="hero" className="relative z-10 w-full flex justify-center">
-      <div className="absolute inset-0 z-0">
+    <section
+      id="hero"
+      className="relative z-10 w-full flex justify-center min-h-screen"
+    >
+      {/* 🔥 BACKGROUND FIXO (CORRIGIDO) */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
         <Grainient
           color1="#000000"
           color2="#000000"
@@ -43,18 +45,24 @@ export default function Hero() {
           zoom={0.9}
         />
       </div>
+
       <div
         id="hero-content"
-        className="w-full min-h-[100dvh] flex flex-col gap-10 justify-center items-center mx-2 md:mx-0"
+        className="w-full min-h-screen flex flex-col gap-10 justify-center items-center mx-2 md:mx-0"
       >
+        {/* Scroll indicator mobile */}
         <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2">
           <ScrollIndicator />
         </div>
+
+        {/* Logo */}
         <p className="absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
           coutinho
           <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
           dev
         </p>
+
+        {/* Status */}
         <Link
           href="https://www.linkedin.com/in/joaocoutinho5"
           target="_blank"
@@ -67,6 +75,7 @@ export default function Hero() {
           </span>
           open to work
         </Link>
+
         <header className="container flex flex-col justify-center items-center text-center gap-4">
           <p
             ref={subtitleRef}
@@ -74,17 +83,19 @@ export default function Hero() {
           >
             Fullstack Developer
           </p>
+
           <h1
             ref={titleRef}
             className="text-6xl md:text-7xl font-bold fade-down delay-1 text-white/90"
           >
             João Pedro Coutinho
           </h1>
+
+          {/* Desktop info */}
           <div
             ref={linksRef}
             className="hidden max-w-150 text-sm md:text-base md:grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-4 fade-down delay-2"
           >
-            {/* Coluna 1 */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
@@ -97,7 +108,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Coluna 2 */}
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <LuLinkedin className="w-5 h-5 text-primary" />
@@ -112,39 +122,37 @@ export default function Hero() {
               </div>
             </div>
           </div>
+
+          {/* Mobile icons */}
           <div
             ref={linksRefMbl}
-            className="flex flex-row md:hidden justify-center items-center gap-6 md:gap-8 mt-6 fade-down delay-2"
+            className="flex flex-row md:hidden justify-center items-center gap-6 mt-6 fade-down delay-2"
           >
             <Link
               href="https://github.com/joaocoutinho5"
-              className="text-primary transition"
               target="_blank"
+              className="text-primary"
             >
               <LuGithub size={22} />
             </Link>
+
             <Link
               href="https://www.linkedin.com/in/joaocoutinho5"
-              className="text-primary transition"
               target="_blank"
+              className="text-primary"
             >
               <LuLinkedin size={22} />
             </Link>
+
             <Link
-              href="https://github.com/joaocoutinho5"
-              className="text-primary transition"
+              href="https://instagram.com"
               target="_blank"
+              className="text-primary"
             >
               <LuInstagram size={22} />
             </Link>
           </div>
         </header>
-
-        {/* <div ref={btnRef} className="fade-down delay-4">
-          <BtnCurriculo />
-          </div> */}
-
-        {/* Background decoration*/}
       </div>
     </section>
   );

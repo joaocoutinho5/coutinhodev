@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark">
-      <body className="min-h-[100dvh] w-full flex flex-col justify-center items-center">
+      <body className="min-h-screen w-full flex flex-col justify-center items-center bg-black">
         <NavBar />
         {children}
       </body>
