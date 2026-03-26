@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Lenis from "lenis";
 
 import Hero from "./components/hero";
 import About from "./components/about";
@@ -13,37 +14,71 @@ import Footer from "./components/footer";
 
 export default function Home() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
 
+    lenis.on("scroll", ScrollTrigger.update);
+
+    const updateRaf = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(updateRaf);
     gsap.ticker.lagSmoothing(0);
 
-    // Animação da Hero sumindo no scroll
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 3. LOGICA DO SCROLL TO (Links Âncora)
+    const handleAnchorClick = (e: Event) => {
+  const targetElement = e.currentTarget as HTMLAnchorElement;
+  const target = targetElement.getAttribute("href");
+
+  if (target && target.startsWith("#")) {
+    e.preventDefault();
+    lenis.scrollTo(target, {
+      offset: 0,
+      immediate: false,
+      duration: 1.5,
+    });
+  }
+    };
+
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach((link) => link.addEventListener("click", handleAnchorClick));
+
     gsap.to("#hero-content", {
+      y: 500,
       opacity: 0,
-      y: -60,
+      ease: "none",
       scrollTrigger: {
         trigger: "#content-container",
-        start: "top 90%",
-        end: "top 60%",
-        scrub: 1,
+        start: "top 100%",
+        end: "top 30%",
+        scrub: true,
       },
     });
 
     ScrollTrigger.refresh();
 
     return () => {
-      ScrollTrigger.killAll();
+      lenis.destroy();
+      gsap.ticker.remove(updateRaf);
+      links.forEach((link) =>
+        link.removeEventListener("click", handleAnchorClick),
+      );
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
   return (
     <div className="w-full min-h-screen">
-      {/* HERO NORMAL */}
-      <section id="hero-section" className="relative w-full z-0">
+      <section
+        id="hero-section"
+        className="relative w-full h-dvh overflow-hidden z-0"
+      >
         <Hero />
       </section>
-
-      {/* CONTEÚDO */}
       <div className="relative z-10 w-full">
         <div
           id="content-container"
