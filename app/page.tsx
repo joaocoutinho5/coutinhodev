@@ -14,81 +14,75 @@ import Footer from "./components/footer";
 
 export default function Home() {
   useEffect(() => {
-    const lenis = new Lenis({ 
+    const lenis = new Lenis({
       duration: 1.2,
-      smoothWheel: true,
-      touchMultiplier: 1.5 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
     lenis.on("scroll", ScrollTrigger.update);
-    const updateRaf = (time: number) => lenis.raf(time * 1000);
+
+    const updateRaf = (time: number) => {
+      lenis.raf(time * 1000);
+    };
     gsap.ticker.add(updateRaf);
     gsap.ticker.lagSmoothing(0);
+
     gsap.registerPlugin(ScrollTrigger);
 
+    // 3. LOGICA DO SCROLL TO (Links Âncora)
     const handleAnchorClick = (e: Event) => {
-      const target = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
-      if (target?.startsWith("#")) {
-        e.preventDefault();
-        lenis.scrollTo(target);
-      }
+  const targetElement = e.currentTarget as HTMLAnchorElement;
+  const target = targetElement.getAttribute("href");
+
+  if (target && target.startsWith("#")) {
+    e.preventDefault();
+    lenis.scrollTo(target, {
+      offset: 0,
+      immediate: false,
+      duration: 1.5,
+    });
+  }
     };
+
     const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(l => l.addEventListener("click", handleAnchorClick));
+    links.forEach((link) => link.addEventListener("click", handleAnchorClick));
 
-    //MatchMedia Radical
-    const mm = gsap.matchMedia();
-
-    // APENAS DESKTOP: Efeito de sobreposição e fade
-    mm.add("(min-width: 768px)", () => {
-      gsap.to("#hero-content", {
-        y: 500,
-        opacity: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#content-container",
-          start: "top 100%",
-          end: "top 20%",
-          scrub: true,
-        },
-      });
+    gsap.to("#hero-content", {
+      y: 500,
+      opacity: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#content-container",
+        start: "top 100%",
+        end: "top 30%",
+        scrub: true,
+      },
     });
 
-    // MOBILE: Não adicionado animação de movimento no #hero-content.
-    mm.add("(max-width: 767px)", () => {
-      gsap.to("#hero-content", {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: "#content-container",
-          start: "top 90%",
-          end: "top 40%",
-          scrub: true,
-        }
-      });
-    });
+    ScrollTrigger.refresh();
 
     return () => {
       lenis.destroy();
       gsap.ticker.remove(updateRaf);
-      mm.revert();
-      links.forEach(l => l.removeEventListener("click", handleAnchorClick));
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      links.forEach((link) =>
+        link.removeEventListener("click", handleAnchorClick),
+      );
+      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
   return (
-    <main className="w-full min-h-screen">
+    <div className="w-full min-h-screen">
       <section
         id="hero-section"
-        className="relative w-full min-h-dvh md:h-dvh flex items-center justify-center z-0"
+        className="relative w-full h-screen overflow-hidden z-0"
       >
         <Hero />
       </section>
-
       <div className="relative z-10 w-full">
         <div
           id="content-container"
-          className="relative w-full bg-background/80 md:backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px]"
+          className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px]"
         >
           <About />
           <Skills />
@@ -97,6 +91,6 @@ export default function Home() {
           <Footer />
         </div>
       </div>
-    </main>
+    </div>
   );
 }

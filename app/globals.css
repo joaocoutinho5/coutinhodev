@@ -84,3 +84,24 @@ body {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
+
+
+/* Aplica em toda a seção da Hero */
+#hero-section {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Aplica especificamente em qualquer Canvas (comum em heroBg.tsx) 
+   ou divs dentro da Hero que possam ser o fundo animado */
+#hero-section canvas,
+#hero-section .bg-animated, /* Se você tiver uma classe específica no heroBg */
+#hero-content {
+  will-change: transform, opacity;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}

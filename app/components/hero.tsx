@@ -18,7 +18,6 @@ export default function Hero() {
       id="hero"
       className="relative z-10 w-full flex justify-center min-h-screen"
     >
-      {/* 🔥 BACKGROUND FIXO (CORRIGIDO) */}
       <div className="fixed inset-0 -z-10 pointer-events-none">
         <Grainient
           color1="#000000"
