@@ -14,12 +14,9 @@ export default function Hero() {
   const linksRefMbl = useInView();
 
   return (
-    <section
-      id="hero"
-      className="relative z-10 w-full flex justify-center min-h-screen"
-    >
-      {/* 🔥 BACKGROUND FIXO (CORRIGIDO) */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
+    <div className="w-full h-full flex justify-center items-center">
+      {/* 1. LAYER FIXA: O Fundo animado que nunca se move */}
+      <div className="fixed inset-0 -z-20 pointer-events-none">
         <Grainient
           color1="#000000"
           color2="#000000"
@@ -46,12 +43,13 @@ export default function Hero() {
         />
       </div>
 
+      {/* 2. LAYER RELATIVE: O conteúdo que sobe com o scroll no mobile */}
       <div
         id="hero-content"
-        className="w-full min-h-screen flex flex-col gap-10 justify-center items-center mx-2 md:mx-0"
+        className="relative z-10 w-full min-h-screen flex flex-col gap-10 justify-center items-center px-4 md:px-0"
       >
         {/* Scroll indicator mobile */}
-        <div className="flex md:hidden absolute bottom-10 left-1/2 transform -translate-x-1/2">
+        <div className="flex md:hidden absolute bottom-30 left-1/2 transform -translate-x-1/2">
           <ScrollIndicator />
         </div>
 
@@ -86,9 +84,9 @@ export default function Hero() {
 
           <h1
             ref={titleRef}
-            className="text-6xl md:text-7xl font-bold fade-down delay-1 text-white/90"
+            className="text-5xl md:text-7xl font-bold fade-down delay-1 text-white/90 leading-tight"
           >
-            João Pedro Coutinho
+            João Pedro <br className="md:hidden" /> Coutinho
           </h1>
 
           {/* Desktop info */}
@@ -101,7 +99,6 @@ export default function Hero() {
                 <Mail className="w-5 h-5 text-primary" />
                 <span className="text-white/65">coutinhodev@outlook.com</span>
               </div>
-
               <div className="flex items-center gap-3">
                 <LuGithub className="w-5 h-5 text-primary" />
                 <span className="text-white/65">github.com/joaocoutinho5</span>
@@ -115,7 +112,6 @@ export default function Hero() {
                   linkedin.com/in/joaocoutinho5
                 </span>
               </div>
-
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-primary" />
                 <span className="text-white/65">Ribeirão Preto, SP</span>
@@ -126,34 +122,20 @@ export default function Hero() {
           {/* Mobile icons */}
           <div
             ref={linksRefMbl}
-            className="flex flex-row md:hidden justify-center items-center gap-6 mt-6 fade-down delay-2"
+            className="flex flex-row md:hidden justify-center items-center gap-8 mt-6 fade-down delay-2"
           >
-            <Link
-              href="https://github.com/joaocoutinho5"
-              target="_blank"
-              className="text-primary"
-            >
-              <LuGithub size={22} />
+            <Link href="https://github.com/joaocoutinho5" target="_blank" className="text-primary hover:scale-110 transition">
+              <LuGithub size={26} />
             </Link>
-
-            <Link
-              href="https://www.linkedin.com/in/joaocoutinho5"
-              target="_blank"
-              className="text-primary"
-            >
-              <LuLinkedin size={22} />
+            <Link href="https://www.linkedin.com/in/joaocoutinho5" target="_blank" className="text-primary hover:scale-110 transition">
+              <LuLinkedin size={26} />
             </Link>
-
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              className="text-primary"
-            >
-              <LuInstagram size={22} />
+            <Link href="https://instagram.com" target="_blank" className="text-primary hover:scale-110 transition">
+              <LuInstagram size={26} />
             </Link>
           </div>
         </header>
       </div>
-    </section>
+    </div>
   );
 }
