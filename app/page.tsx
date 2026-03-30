@@ -81,8 +81,6 @@ export default function Home() {
 
   return (
     <main className="w-full min-h-screen">
-      
-      {/* Hero Section: 'relative' para o conteúdo subir no scroll */}
       <section
         id="hero-section"
         className="relative w-full h-screen md:h-screen flex items-center justify-center z-0"
@@ -90,7 +88,6 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* Container de Conteúdo: Transparente com rounded top */}
       <div className="relative z-10 w-full mt-0">
         <div
           id="content-container"
