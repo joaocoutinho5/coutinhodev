@@ -14,15 +14,17 @@ import Footer from "./components/footer";
 
 export default function Home() {
   useEffect(() => {
+    // Detecta se é mobile
     const isMobile = window.innerWidth < 768;
     let lenis: Lenis | null = null;
     let mm: gsap.MatchMedia | null = null;
 
+    // Inicializa Lenis e GSAP APENAS no Desktop
     if (!isMobile) {
-      lenis = new Lenis({ 
-        duration: 1.2, 
-        smoothWheel: true, 
-        touchMultiplier: 1.5 
+      lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        touchMultiplier: 1.5,
       });
 
       lenis.on("scroll", ScrollTrigger.update);
@@ -33,10 +35,10 @@ export default function Home() {
 
       mm = gsap.matchMedia();
 
-      // Animação de fade-out e subida do conteúdo da Hero (APENAS DESKTOP)
+      // Animação original APENAS para Desktop
       mm.add("(min-width: 768px)", () => {
         gsap.to("#hero-content", {
-          y: 200,
+          y: 250,
           opacity: 0,
           ease: "none",
           scrollTrigger: {
@@ -49,6 +51,7 @@ export default function Home() {
       });
     }
 
+    // Controle de links âncora
     const handleAnchorClick = (e: Event) => {
       const target = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
       if (target?.startsWith("#")) {
@@ -56,7 +59,8 @@ export default function Home() {
         if (lenis) {
           lenis.scrollTo(target);
         } else {
-          document.querySelector(target)?.scrollIntoView({ behavior: "smooth" });
+          // Fallback nativo para o mobile
+          document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
         }
       }
     };
@@ -77,19 +81,20 @@ export default function Home() {
 
   return (
     <main className="w-full min-h-screen">
-      {/* Hero Section: Relative em tudo para o conteúdo subir no scroll */}
+      
+      {/* Hero Section: 'relative' para o conteúdo subir no scroll */}
       <section
         id="hero-section"
-        className="relative w-full min-h-screen md:h-screen flex items-center justify-center z-0"
+        className="relative w-full h-screen md:h-screen flex items-center justify-center z-0"
       >
         <Hero />
       </section>
 
-      {/* Container de Conteúdo: Sobe por cima da Hero no Mobile e Web */}
-      <div className="relative z-10 w-full">
+      {/* Container de Conteúdo: Transparente com rounded top */}
+      <div className="relative z-10 w-full mt-0">
         <div
           id="content-container"
-          className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px] overflow-hidden border-t border-white/5"
+          className="relative w-full bg-background/80 backdrop-blur-md rounded-t-[30px] md:rounded-t-[50px] overflow-hidden"
         >
           <About />
           <Skills />

@@ -15,8 +15,32 @@ export default function Hero() {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      {/* 1. LAYER FIXA: O Fundo animado que nunca se move */}
-      <div className="fixed inset-0 -z-20 pointer-events-none">
+      
+      {/* =========================================
+          CAMADA 1 (MOBILE): Fundo Estático
+          ========================================= */}
+      {/* Esta div substitui o Grainient no Mobile.
+          Ela está 'fixed' para ocupar a tela toda e ficar parada.
+          Atualmente, coloquei uma cor sólida de fundo (`bg-[#0a0a0c]`).
+          
+          COMO COLOCAR A IMAGEM:
+          Substitua a classe `bg-[#0a0a0c]` pelas classes de imagem do Tailwind:
+          className="... bg-[url('/pasta-para/sua-imagem.jpg')] bg-cover bg-center"
+      */}
+      <div 
+  className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-screen bg-transparent"
+  /* DICA: Quando for colocar a imagem, troque 'bg-transparent' por:
+     bg-[url('/seu-caminho/imagem.jpg')] bg-cover bg-center 
+  */
+/>
+
+      {/* =========================================
+          CAMADA 2 (DESKTOP): Fundo Animado
+          ========================================= */}
+      {/* Escondido no mobile (`hidden`), visível no desktop (`md:block`).
+          Continua 'fixed' para o efeito premium do GSAP no PC.
+      */}
+      <div className="hidden md:block fixed inset-0 -z-20 pointer-events-none">
         <Grainient
           color1="#000000"
           color2="#000000"
@@ -43,7 +67,12 @@ export default function Hero() {
         />
       </div>
 
-      {/* 2. LAYER RELATIVE: O conteúdo que sobe com o scroll no mobile */}
+      {/* =========================================
+          CAMADA 3: Conteúdo (Texto e Links)
+          ========================================= */}
+      {/* 'relative' no mobile para subir com o scroll.
+          O GSAP ainda controla essa div no Desktop via ID `#hero-content`.
+      */}
       <div
         id="hero-content"
         className="relative z-10 w-full min-h-screen flex flex-col gap-10 justify-center items-center px-4 md:px-0"
