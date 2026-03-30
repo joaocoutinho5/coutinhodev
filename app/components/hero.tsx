@@ -28,8 +28,11 @@ export default function Hero() {
           className="... bg-[url('/pasta-para/sua-imagem.jpg')] bg-cover bg-center"
       */}
       <div 
-        className="block md:hidden fixed inset-0 -z-20 pointer-events-none bg-red-200 w-full h-screen"
-      />
+  className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-screen bg-transparent"
+  /* DICA: Quando for colocar a imagem, troque 'bg-transparent' por:
+     bg-[url('/seu-caminho/imagem.jpg')] bg-cover bg-center 
+  */
+/>
 
       {/* =========================================
           CAMADA 2 (DESKTOP): Fundo Animado
