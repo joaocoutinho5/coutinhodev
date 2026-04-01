@@ -11,13 +11,13 @@ export default function Footer() {
           <div className="flex flex-col items-end justify-center py-8 gap-6">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="w-full flex items-center justify-end gap-1 text-foreground/90 pb-4"
+              className="w-full flex items-center justify-end gap-1 text-foreground/70 pb-4"
             >
               <LuArrowUp className="" />
               <p className="text-md">Voltar ao topo</p>
             </button>
             {/* Links sociais */}
-            <nav className="flex flex-col items-end gap-4 text-md text-foreground/90">
+            <nav className="flex flex-col items-end gap-4 text-md text-foreground/70">
               <p className="text-foreground/40">Links</p>
               <div className="relative group">
                 <Link
@@ -58,7 +58,7 @@ export default function Footer() {
         <div className="relative z-10 flex flex-col items-end justify-between px-5 xl:px-12 py-12 gap-20">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="group flex items-center justify-center gap-1 text-foreground/90"
+            className="group flex items-center justify-center gap-1 text-foreground/70"
           >
             <LuArrowUp className="w-5 h-5 group-hover:text-primary transition" />
             <p className="text-lg group-hover:text-primary transition">
@@ -70,7 +70,7 @@ export default function Footer() {
               © {new Date().getFullYear()} Todos os direitos reservados
             </p>
             {/* Links sociais */}
-            <nav className="flex items-center gap-6 text-sm text-foreground/90">
+            <nav className="flex items-center gap-6 text-sm text-foreground/70">
               <div className="relative group">
                 <Link
                   href="https://github.com/joaocoutinho5/coutinhodev"
