@@ -17,7 +17,7 @@ export default function Hero() {
       {/* =========================================
                         MOBILE
           ========================================= */}
-      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-full bg-transparent">
+      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-screen bg-transparent">
         <Grainient
           color1="#000000"
           color2="#000000"
