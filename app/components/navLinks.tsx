@@ -8,25 +8,24 @@ type NavLinkProps = {
   closeMenu?: () => void;
 };
 
-export default function NavLinks({
-  id,
-  label,
-  active,
-  icon,
-  closeMenu,
-}: NavLinkProps) {
+export default function NavLinks({ id, label, active, icon, closeMenu }: NavLinkProps) {
+  
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
+    e.stopPropagation();
 
     const el = document.getElementById(id);
-    if (!el) return;
+    
+    if (el) {
+      if (closeMenu) closeMenu();
 
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    closeMenu?.();
+      setTimeout(() => {
+        el.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "start" 
+        });
+      }, 100);
+    }
   };
 
   return (
@@ -34,19 +33,15 @@ export default function NavLinks({
       href={`#${id}`}
       onClick={handleClick}
       className={`
-        relative flex items-center justify-center transition-all duration-300 rounded-full
-        flex-col gap-1 px-4 text-xs
-        ${active ? "text-primary" : "text-foreground/50"}
-        md:flex-row md:px-6 md:py-3 md:text-[15px]
-        ${
-          active
-            ? "md:bg-white/90 md:text-black/90"
-            : "md:bg-transparent md:text-foreground/50 md:hover:text-white/90"
-        }
+        relative flex items-center transition-all duration-300 rounded-xl w-full
+        gap-4 px-5 py-4 text-sm pointer-events-auto
+        ${active ? "text-primary bg-primary/10" : "text-foreground/60"}
+        md:flex-col md:gap-1 md:px-6 md:py-3 md:text-[15px] md:rounded-full md:w-auto
+        ${active ? "md:bg-white/90 md:text-black/90" : "md:bg-transparent md:text-foreground/50 md:hover:text-white/90"}
       `}
     >
-      <span className="text-base md:hidden">{icon}</span>
-      <span className="sm:inline">{label}</span>
+      <span className="text-xl md:hidden">{icon}</span>
+      <span className="font-medium">{label}</span>
     </a>
   );
 }

@@ -154,11 +154,16 @@ const Grainient: React.FC<GrainientProps> = ({
   useEffect(() => {
     if (!containerRef.current) return;
 
+    const isMobile = window.innerWidth < 768;
+    // No mobile, se o fundo é fixo e tem transparência por cima, 
+    // forçamos o DPR em 0.9 ou 1 para não travar o scroll das seções superiores.
+    const dpr = isMobile ? 0.9 : Math.min(window.devicePixelRatio || 1, 2);
+
     const renderer = new Renderer({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
+      dpr
     });
 
     const gl = renderer.gl;
@@ -166,6 +171,8 @@ const Grainient: React.FC<GrainientProps> = ({
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.display = 'block';
+    canvas.style.transform = 'translateZ(0)';
+    canvas.style.willChange = 'transform';
 
     const container = containerRef.current;
     container.appendChild(canvas);
@@ -203,10 +210,20 @@ const Grainient: React.FC<GrainientProps> = ({
 
     const mesh = new Mesh(gl, { geometry, program });
 
+    // OTMIZAÇÃO 2: Smart Resize (ignora barra de navegação no mobile)
+    let lastWidth = 0;
+    let lastHeight = 0;
+
     const setSize = () => {
       const rect = container.getBoundingClientRect();
       const width = Math.max(1, Math.floor(rect.width));
       const height = Math.max(1, Math.floor(rect.height));
+
+      // Ignora micro-ajustes de altura do mobile (barra de endereço)
+      if (isMobile && width === lastWidth && Math.abs(height - lastHeight) < 150) return;
+
+      lastWidth = width;
+      lastHeight = height;
       renderer.setSize(width, height);
       const res = (program.uniforms.iResolution as { value: Float32Array }).value;
       res[0] = gl.drawingBufferWidth;
@@ -220,6 +237,7 @@ const Grainient: React.FC<GrainientProps> = ({
     let raf = 0;
     const t0 = performance.now();
     const loop = (t: number) => {
+      // Como o fundo é fixo e visível, o loop roda sempre
       (program.uniforms.iTime as { value: number }).value = (t - t0) * 0.001;
       renderer.render({ scene: mesh });
       raf = requestAnimationFrame(loop);
@@ -229,35 +247,12 @@ const Grainient: React.FC<GrainientProps> = ({
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();
-      try {
-        container.removeChild(canvas);
-      } catch {
-        // Ignore
-      }
+      try { container.removeChild(canvas); } catch { }
     };
   }, [
-    timeSpeed,
-    colorBalance,
-    warpStrength,
-    warpFrequency,
-    warpSpeed,
-    warpAmplitude,
-    blendAngle,
-    blendSoftness,
-    rotationAmount,
-    noiseScale,
-    grainAmount,
-    grainScale,
-    grainAnimated,
-    contrast,
-    gamma,
-    saturation,
-    centerX,
-    centerY,
-    zoom,
-    color1,
-    color2,
-    color3
+    timeSpeed, colorBalance, warpStrength, warpFrequency, warpSpeed, warpAmplitude,
+    blendAngle, blendSoftness, rotationAmount, noiseScale, grainAmount, grainScale,
+    grainAnimated, contrast, gamma, saturation, centerX, centerY, zoom, color1, color2, color3
   ]);
 
   return <div ref={containerRef} className={`relative h-full w-full overflow-hidden ${className}`.trim()} />;
