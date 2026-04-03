@@ -3,14 +3,15 @@ import { JetBrains_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/navBar";
 
-export const viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
-
 export const metadata: Metadata = {
   title: "Portifólio | Coutinho Dev",
   description: "Portifólio profissional de João Pedro Coutinho",
+  themeColor: 'transparent'
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const poppins = Poppins({
