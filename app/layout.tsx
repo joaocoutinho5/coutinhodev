@@ -6,12 +6,14 @@ import NavBar from "./components/navBar";
 export const metadata: Metadata = {
   title: "Portifólio | Coutinho Dev",
   description: "Portifólio profissional de João Pedro Coutinho",
-  themeColor: 'transparent'
 };
 
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
+  AppleMobileWebAppCapable: "yes",
+  AppleMobileWebAppStatusBarStyle: "default",
 };
 
 const poppins = Poppins({

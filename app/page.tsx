@@ -84,7 +84,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen bg-transparent">
+    <main className="w-full min-h-screen">
       <section
         id="hero-section"
         className="relative w-full h-screen md:h-screen flex items-center justify-center z-0"
