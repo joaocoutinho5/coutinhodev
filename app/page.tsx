@@ -53,14 +53,18 @@ export default function Home() {
 
     // Controle de links âncora
     const handleAnchorClick = (e: Event) => {
-      const target = (e.currentTarget as HTMLAnchorElement).getAttribute("href");
+      const target = (e.currentTarget as HTMLAnchorElement).getAttribute(
+        "href",
+      );
       if (target?.startsWith("#")) {
         e.preventDefault();
         if (lenis) {
           lenis.scrollTo(target);
         } else {
           // Fallback nativo para o mobile
-          document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+          document
+            .querySelector(target)
+            ?.scrollIntoView({ behavior: "smooth" });
         }
       }
     };
@@ -80,7 +84,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen">
+    <main className="w-full min-h-screen bg-transparent">
       <section
         id="hero-section"
         className="relative w-full h-screen md:h-screen flex items-center justify-center z-0"
