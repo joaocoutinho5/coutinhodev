@@ -14,23 +14,22 @@ export default function Hero() {
 
   return (
     <div className="w-full h-full flex justify-center items-center">
-      
       {/* =========================================
                         MOBILE
           ========================================= */}
-      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-dvh bg-[#050505]">
-  <Grainient
-    color1="#000000"
-    color2="#000000"
-    color3="#8f09ce" 
-    timeSpeed={0.1} // Reduzi a velocidade para o movimento ser sutil por baixo das seções
-    warpFrequency={2} // Menos complexidade matemática para não engasgar o scroll
-    warpSpeed={0.5}
-    grainAmount={0} // Grão + Transparência + Scroll = Lag no mobile. Melhor deixar 0.
-    grainAnimated={false}
-    zoom={1.2} // Um leve zoom ajuda a esconder imperfeições de resolução baixa (DPR 0.9)
-  />
-</div>
+      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-screen">
+        <Grainient
+          color1="#000000"
+          color2="#000000"
+          color3="#8f09ce"
+          timeSpeed={0.1} // Velocidade de movimento reduzida para ser sutil por baixo das seções
+          warpFrequency={2} // Menos complexidade matemática para não engasgar o scroll
+          warpSpeed={0.5}
+          grainAmount={0} // Menos granulação = Menos lag no mobile
+          grainAnimated={false}
+          zoom={1.2} // Zoom leve para ajudar a esconder imperfeições de resolução baixa (DPR 0.9)
+        />
+      </div>
 
       {/* =========================================
                         DESKTOP
@@ -69,7 +68,6 @@ export default function Hero() {
         id="hero-content"
         className="relative z-10 w-full min-h-screen flex flex-col gap-10 justify-center items-center px-4 md:px-0"
       >
-
         {/* Logo */}
         <p className="absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
           coutinho
@@ -141,13 +139,25 @@ export default function Hero() {
             ref={linksRefMbl}
             className="flex flex-row md:hidden justify-center items-center gap-8 mt-6 fade-down delay-2"
           >
-            <Link href="https://github.com/joaocoutinho5" target="_blank" className="text-primary hover:scale-110 transition">
+            <Link
+              href="https://github.com/joaocoutinho5"
+              target="_blank"
+              className="text-primary hover:scale-110 transition"
+            >
               <LuGithub size={26} />
             </Link>
-            <Link href="https://www.linkedin.com/in/joaocoutinho5" target="_blank" className="text-primary hover:scale-110 transition">
+            <Link
+              href="https://www.linkedin.com/in/joaocoutinho5"
+              target="_blank"
+              className="text-primary hover:scale-110 transition"
+            >
               <LuLinkedin size={26} />
             </Link>
-            <Link href="https://instagram.com" target="_blank" className="text-primary hover:scale-110 transition">
+            <Link
+              href="https://instagram.com"
+              target="_blank"
+              className="text-primary hover:scale-110 transition"
+            >
               <LuInstagram size={26} />
             </Link>
           </div>
