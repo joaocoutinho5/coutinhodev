@@ -69,7 +69,7 @@ export default function Hero() {
         className="relative z-10 w-full min-h-screen flex flex-col gap-10 justify-center items-center px-4 md:px-0"
       >
         {/* Logo */}
-        <p className="absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
+        <p className="font-mono absolute top-9 md:top-8 left-6 md:left-8 text-foreground flex flex-row items-end text-lg md:text-xl font-semibold hover:text-primary transition">
           coutinho
           <span className="mb-1.75 w-0.75 h-0.75 shrink-0 rounded-full bg-primary" />
           dev
@@ -80,7 +80,7 @@ export default function Hero() {
           href="https://www.linkedin.com/in/joaocoutinho5"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex absolute top-9 md:top-8 right-6 md:right-8 items-center gap-2 text-lg"
+          className="font-mono hidden md:flex absolute top-9 md:top-8 right-6 md:right-8 items-center gap-2 text-lg"
         >
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -92,7 +92,7 @@ export default function Hero() {
         <header className="container flex flex-col justify-center items-center text-center gap-4">
           <p
             ref={subtitleRef}
-            className="text-md md:text-lg text-primary fade-down"
+            className="font-mono text-md md:text-lg text-primary fade-down"
           >
             Fullstack Developer
           </p>

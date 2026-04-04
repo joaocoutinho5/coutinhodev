@@ -33,7 +33,7 @@ export function SectionHeader({
             </span>
           </span>
 
-          <span className="absolute -top-2 -right-6 text-xs md:text-sm font-mono text-primary">
+          <span className="absolute -top-2 -right-6 text-xs md:text-sm text-primary">
             ({number})
           </span>
         </h1>
