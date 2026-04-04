@@ -94,7 +94,7 @@ export default function Hero() {
             ref={subtitleRef}
             className="font-mono text-md md:text-lg text-primary fade-down"
           >
-            Fullstack Developer
+            Full-Stack Developer
           </p>
 
           <h1

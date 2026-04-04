@@ -30,7 +30,7 @@ export function ProfileCard() {
               João Pedro Coutinho
             </h3>
             <p className="text-md text-foreground/60">
-              Desenvolvedor Fullstack
+              Desenvolvedor Full-Stack
             </p>
           </div>
         </div>
