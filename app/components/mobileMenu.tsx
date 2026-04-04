@@ -50,7 +50,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }: MobileMen
               </button>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="font-mono flex flex-col gap-4">
               {NAV_ITEMS.map((item) => (
                 <div key={item.id} className="w-full flex">
                   <NavLinks

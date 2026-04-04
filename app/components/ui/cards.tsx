@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Foto from "@/app/assets/joao.jpeg";
-import { BtnGitHub, BtnLinkedin, BtnInstagram, BtnWpp } from "./buttons";
+import { BtnWpp } from "./buttons";
 import { motion } from "framer-motion";
 import { Mail, MapPin } from "lucide-react";
 import { LuGithub, LuExternalLink } from "react-icons/lu";
@@ -41,13 +41,13 @@ export function ProfileCard() {
         </p>
         <div className="flex flex-wrap gap-2">
           <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
-            Atenção a detalhes
-          </span>
-          <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
             Aprendizado contínuo
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
             Código limpo
+          </span>
+          <span className="rounded-full bg-primary/10 px-3 py-1.5 text-xs text-primary">
+            Atenção a detalhes
           </span>
         </div>
       </div>

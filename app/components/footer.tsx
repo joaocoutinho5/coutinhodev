@@ -47,7 +47,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="w-full relative flex justify-center items-center pb-4">
-          <h1 className="absolute left-1/2 -translate-x-1/2 -bottom-[200%] text-[55px] font-bold text-white/10 whitespace-nowrap select-none">
+          <h1 className="font-mono font-bold absolute left-1/2 -translate-x-1/2 -bottom-[200%] text-[55px] text-white/10 whitespace-nowrap select-none">
             coutinho.dev
           </h1>
         </div>
@@ -105,7 +105,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="relative h-30 md:h-38">
-          <h1 className="absolute left-1/2 -translate-x-1/2 -bottom-[55%] xl:-bottom-[75%] 2xl:-bottom-full text-[14vw] font-bold text-white/10 whitespace-nowrap select-none">
+          <h1 className="font-mono font-bold absolute left-1/2 -translate-x-1/2 -bottom-[55%] xl:-bottom-[75%] 2xl:-bottom-full text-[14vw] text-white/10 whitespace-nowrap select-none">
             coutinho.dev
           </h1>
         </div>

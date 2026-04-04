@@ -1,10 +1,10 @@
 "use client";
-import { useInView } from "../hooks/useInView";
+// import { useInView } from "../hooks/useInView";
 import { SectionHeader } from "./sectionHeader";
 import { ProfileCard } from "./ui/cards";
 
 export default function About() {
-  const ref = useInView();
+  // const ref = useInView();
 
   return (
     <section
