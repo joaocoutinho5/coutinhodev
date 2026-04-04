@@ -24,7 +24,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }: MobileMen
               e.stopPropagation();
               onClose();
             }}
-            className="fixed left-0 right-0 bottom-0 top-0 bg-black/60 backdrop-blur-sm z-110 md:hidden cursor-pointer pointer-events-auto"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-110 md:hidden cursor-pointer pointer-events-auto"
           />
 
           {/* Painel lateral */}
