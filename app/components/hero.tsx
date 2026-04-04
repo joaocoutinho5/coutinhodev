@@ -17,18 +17,8 @@ export default function Hero() {
       {/* =========================================
                         MOBILE
           ========================================= */}
-      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-screen bg-transparent">
-        <Grainient
-          color1="#000000"
-          color2="#000000"
-          color3="#8f09ce"
-          timeSpeed={0.1} // Velocidade de movimento reduzida para ser sutil por baixo das seções
-          warpFrequency={2} // Menos complexidade matemática para não engasgar o scroll
-          warpSpeed={0.5}
-          grainAmount={0} // Menos granulação = Menos lag no mobile
-          grainAnimated={false}
-          zoom={1.2} // Zoom leve para ajudar a esconder imperfeições de resolução baixa (DPR 0.9)
-        />
+      <div className="block md:hidden fixed inset-0 -z-20 pointer-events-none w-full h-full bg-[#050505] overflow-hidden">
+        <div className="absolute top-[33%] left-1/2 -translate-x-1/2 w-70 h-70 bg-primary/40 rounded-full blur-[100px]" />
       </div>
 
       {/* =========================================
