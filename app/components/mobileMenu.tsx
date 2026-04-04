@@ -24,7 +24,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }: MobileMen
               e.stopPropagation();
               onClose();
             }}
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-110 md:hidden cursor-pointer pointer-events-auto"
+            className="fixed left-0 right-0 bottom-0 top-0 bg-black/60 backdrop-blur-sm z-110 md:hidden cursor-pointer pointer-events-auto"
           />
 
           {/* Painel lateral */}
@@ -33,7 +33,7 @@ export default function MobileMenu({ isOpen, onClose, activeSection }: MobileMen
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 h-full w-70 bg-card/95 backdrop-blur-xl z-120 border-l border-white/10 p-8 shadow-2xl md:hidden flex flex-col pointer-events-auto"
+            className="fixed top-0 right-0 h-screen w-70 bg-card/95 backdrop-blur-xl z-120 border-l border-white/10 p-8 shadow-2xl md:hidden flex flex-col pointer-events-auto"
           >
             <div className="flex justify-end mb-8">
               <button 
