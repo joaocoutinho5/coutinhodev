@@ -1,12 +1,13 @@
 import {
   SiHtml5,
-  SiCss3,
+  SiCss,
   SiJavascript,
   SiTypescript,
   SiReact,
   SiNextdotjs,
   SiTailwindcss,
   SiBootstrap,
+  SiGsap,
   SiNodedotjs,
   SiPython,
   SiPostgresql,
@@ -14,7 +15,6 @@ import {
   SiGit,
   SiGithub,
   SiFigma,
-  SiDocker,
 } from "react-icons/si";
 
 import { VscVscode } from "react-icons/vsc";
@@ -29,7 +29,7 @@ export interface SkillItemProps {
 export const SKILLS: Record<SkillCategory, SkillItemProps[]> = {
   frontend: [
     { name: "HTML", icon: SiHtml5 },
-    { name: "CSS", icon: SiCss3 },
+    { name: "CSS", icon: SiCss },
     { name: "JavaScript", icon: SiJavascript },
     { name: "TypeScript", icon: SiTypescript },
     { name: "React", icon: SiReact },
