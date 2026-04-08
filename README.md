@@ -9,6 +9,8 @@ Portfólio pessoal desenvolvido para apresentar meus projetos, habilidades e evo
 - **Next.js**
 - **React**
 - **Tailwind CSS**
+- **GSAP**
+- **Lenis**
 
 ## Sobre o Portfólio
 
