@@ -4,7 +4,7 @@ import "./globals.css";
 import NavBar from "./components/navBar";
 
 export const metadata: Metadata = {
-  title: "Portifólio | Coutinho Dev",
+  title: "Coutinho Dev",
   description: "Portifólio profissional de João Pedro Coutinho",
 };
 
