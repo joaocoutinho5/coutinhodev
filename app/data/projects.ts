@@ -1,5 +1,7 @@
 import CoutinhoFlix from "@/app/assets/CoutinhoFlix.png";
 import Tarefas from "@/app/assets/Tarefas.png";
+import RotasML from "@/app/assets/RotasML.png";
+import DBVeiculos from "@/app/assets/DBVeiculos.png";
 import { StaticImageData } from "next/image";
 
 export interface ProjectsProps {
@@ -32,6 +34,7 @@ export const PROJECTS = [
   {
     title: "Calculadora de Rotas",
     desc: "Calculadora de rotas desenvolvida com foco em praticidade, permitindo calcular custos, consumo e lucro de forma simples e objetiva, aplicando conceitos de front-end moderno.",
+    image: RotasML,
     tecs: ["React.js", "TypeScript", "Tailwind"],
     demo: "https://rotas-ml.vercel.app/",
     git: "https://github.com/joaocoutinho5/rotas-ml",
@@ -39,6 +42,7 @@ export const PROJECTS = [
   {
     title: "DB Veículos",
     desc: "Aplicação de gerenciamento de veículos criada como projeto de estudo, explorando conceitos essenciais de ASP.NET MVC, como CRUD, controle de acesso e integração com banco de dados relacional.",
+    image: DBVeiculos,
     tecs: ["HTML", "CSS", "C#", "SQL Server"],
     git: "https://github.com/joaocoutinho5/db-veiculos",
   },
