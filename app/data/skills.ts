@@ -10,6 +10,7 @@ import {
   SiGsap,
   SiNodedotjs,
   SiPython,
+  SiMysql,
   SiPostgresql,
   SiIcloud,
   SiGit,
@@ -40,6 +41,7 @@ export const SKILLS: Record<SkillCategory, SkillItemProps[]> = {
   backend: [
     { name: "Python", icon: SiPython},
     { name: "Node.js", icon: SiNodedotjs },
+    { name: "MySQL", icon: SiMysql },
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "REST APIs", icon: SiIcloud },
   ],
